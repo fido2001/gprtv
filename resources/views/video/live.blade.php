@@ -12,7 +12,7 @@
                             <div class="video-items-active">
                             <div class="video-items text-center">
                                 {{-- <video id='hls-example'  class="video-js vjs-default-skin" width="800" height="400" controls>
-                                <source type="application/x-mpegURL" src="http://h1.intechmedia.net/intech/ch66.m3u8">
+                                <source type="application/x-mpegURL" src="https://h1.intechmedia.net/intech/ch66.m3u8">
                                 </video> --}}
                                 <div id="oper"></div>
                                 <div id="vid"></div>
@@ -44,6 +44,7 @@
                 </p> --}}
             </div>
         </div>
+        <div class="col-lg-3"></div>
     </div>
 </section>
 @endsection

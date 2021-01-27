@@ -661,7 +661,7 @@
                         </div>
                         <div class="bottom-caption">
                             <h2>{{ $drama->title }}</h2>
-                            <p>{{ $drama->body }}</p>
+                            <p>{!! $drama->body !!}</p>
                         </div>
                         @endforeach
                     </div>
