@@ -20,5 +20,14 @@
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/slick.css">
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/nice-select.css">
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/style.css">
-        <link href="https://vjs.zencdn.net/7.7.6/video-js.css" rel="stylesheet" />
+
+        <style>
+            .video {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: flex;
+                justify-content: center;
+            }
+        </style>
 </head>

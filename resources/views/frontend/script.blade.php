@@ -30,32 +30,17 @@
         <script src="{{ URL('/frontend') }}/js/plugins.js"></script>
         <script src="{{ URL('/frontend') }}/js/main.js"></script>
         
-        {{-- <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
-        <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
-
-        <script>
-        var player = videojs('hls-example');
-        player.play();
-        </script> --}}
-
         <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
 
         <script>
-        player = new Clappr.Player({
-        source: "https://h1.intechmedia.net/intech/ch66.m3u8",
-        mimeType: "application/x-mpegURL",
-        autoPlay: true, 
-        height: "400px",
-        width: "800px",
-        plugins: {"core": [LevelSelector]}, 
-        parentId: "#vid"});
+            new Clappr.Player({
+            source: "https://h1.intechmedia.net/intech/ch66.m3u8",
+            mimeType: "application/x-mpegURL",
+            mute: false,
+            autoPlay: true,
+            parent: '#player-container',
+            width: '100%',
+            height: '100%'
+            });
         </script>
-
-        {{-- <script src="https://unpkg.com/video.js/dist/video.js"></script>
-        <!--This is for HLS compatibility with all major browsers-->
-        <script src = "https://unpkg.com/browse/@videojs/http-streaming@1.13.3/dist/videojs-http-streaming.min.js"></script>
-        <script>
-            var player = videojs('my_video_1');
-        </script> --}}
