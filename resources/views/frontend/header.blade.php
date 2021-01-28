@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
-                                <a href="index.html"><img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.png" alt="" style="width: 150px"></a>
+                                <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 150px"></a>
                             </div>
                         </div>
                     </div>
@@ -20,7 +20,7 @@
                         <div class="col-xl-12 col-lg-12 col-md-12 header-flex">
                             <!-- sticky -->
                                 <div class="sticky-logo">
-                                    <a href="index.html"><img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.png" alt="" style="width: 150px; margin-top:17px"></a>
+                                    <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 150px; margin-top:17px" class="mb-3"></a>
                                 </div>
                             <!-- Main-menu -->
                             <div class="main-menu d-none d-md-block">

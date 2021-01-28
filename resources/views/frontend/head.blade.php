@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/png" href="https://www.gprtv.id/frontend/./asset/img/fav-gpr.png">
+    <link rel="shortcut icon" type="image/png" href="{{ URL('/frontend') }}/img/logo-gpr.png">
 
     <!-- CSS here -->
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/bootstrap.min.css">

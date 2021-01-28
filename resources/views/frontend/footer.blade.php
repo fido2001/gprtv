@@ -8,7 +8,7 @@
                         <div class="single-footer-caption">
                             <!-- logo -->
                             <div class="footer-logo">
-                                <a href="{{ URL('/') }}"><img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.jpg" style="width: 250px; height:120px" class="rounded" alt=""></a>
+                                <a href="{{ URL('/') }}"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" style="width: 250px; height:120px" class="rounded" alt=""></a>
                             </div>
                             <div class="footer-tittle">
                                 <div class="footer-pera">
