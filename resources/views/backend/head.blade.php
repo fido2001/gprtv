@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.gprtv.id/frontend/./asset/img/fav-gpr.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ URL('/frontend') }}/img/logo-gpr.png">
     <title>GPR TV</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL('/') }}/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
