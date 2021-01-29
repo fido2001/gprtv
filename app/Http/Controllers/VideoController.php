@@ -132,27 +132,32 @@ class VideoController extends Controller
             ]
         );
 
+        $attr = $request->all();
+
         if ($request->file('cover')) {
             $fileType = $request->file('cover')->extension();
             $name = \Str::random(8) . '.' . $fileType;
 
             Storage::delete($video->cover);
             $new_cover = Storage::putFileAs('cover', $request->file('cover'), $name);
+        } elseif ($request->thumbnail) {
+            $new_cover = $request->thumbnail;
         } else {
             $new_cover = $video->thumbnail;
         }
 
         if ($request->file('file_video')) {
             $videoType = $request->file('file_video')->extension();
-            $file_video = \Str::random(8) . '.' . $fileType;
+            $file_video = \Str::random(8) . '.' . $videoType;
 
             Storage::delete($video->link_file);
             $new_video = Storage::putFileAs('video', $request->file('file_video'), $file_video);
+        } elseif ($request->link_file) {
+            $new_video = $request->link_file;
         } else {
             $new_video = $video->link_file;
         }
 
-        $attr = $request->all();
         $attr['thumbnail'] = $new_cover;
         $attr['link_file'] = $new_video;
         $attr['category_id'] = request('category_id');
