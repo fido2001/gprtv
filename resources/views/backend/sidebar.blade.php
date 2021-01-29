@@ -45,11 +45,11 @@
                         <li><a href="{{ route('instansi.index') }}">Instansi</a></li>
                     </ul>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('video.index') }}" aria-expanded="false"><i class="fa fa-youtube"></i><span class="hide-menu">Video Youtube</span></a>
-                </li>
+                </li> --}}
                 <li>
-                    <a href="{{ route('file.index') }}" aria-expanded="false"><i class="fa fa-play"></i><span class="hide-menu">Video</span></a>
+                    <a href="{{ route('video.index') }}" aria-expanded="false"><i class="fa fa-play"></i><span class="hide-menu">Video</span></a>
                 </li>
             </ul>
         </nav>

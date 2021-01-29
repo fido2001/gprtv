@@ -49,6 +49,9 @@ class VideoController extends Controller
         $attr = $request->all();
 
         if ($request->file('cover')) {
+            $request->validate([
+                'cover' => 'required|mimes:jpeg,png,jpg,svg|max:2048'
+            ]);
             $fileType = $request->file('cover')->extension();
             $name = \Str::random(8) . '.' . $fileType;
             $new_cover = Storage::putFileAs('cover', $request->file('cover'), $name);
@@ -56,6 +59,9 @@ class VideoController extends Controller
         $attr['thumbnail'] = $new_cover;
 
         if ($request->file('file_video')) {
+            $request->validate([
+                'file_video' => 'required|mimes:mp4|max:100000'
+            ]);
             $videoType = $request->file('file_video')->extension();
             $video = \Str::random(8) . '.' . $videoType;
             $new_video = Storage::putFileAs('video', $request->file('file_video'), $video);
@@ -72,41 +78,31 @@ class VideoController extends Controller
         return redirect()->route('video.index')->with('success', 'Data berhasil ditambah');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Video $video)
     {
-        return view('video.edit', [
-            'video' => $video,
-            'dataKategori' => Category::get(),
-            'dataTag' => Tag::get(),
-            'dataInstansi' => Instansi::get()
-        ]);
+        if (\Storage::exists($video->thumbnail)) {
+            return view('file.edit', [
+                'video' => $video,
+                'dataKategori' => Category::get(),
+                'dataTag' => Tag::get(),
+                'dataInstansi' => Instansi::get()
+            ]);
+        } else {
+            return view('video.edit', [
+                'video' => $video,
+                'dataKategori' => Category::get(),
+                'dataTag' => Tag::get(),
+                'dataInstansi' => Instansi::get()
+            ]);
+        }
         // dd($video);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Video $video)
     {
         $request->validate(
@@ -170,15 +166,15 @@ class VideoController extends Controller
         return redirect()->route('video.index')->with('success', 'Data berhasil diubah');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        Video::destroy($id);
+        $video = Video::where('id', $id)->first();
+        if (\Storage::exists($video->thumbnail) and \Storage::exists($video->link_file)) {
+            \Storage::delete($video->thumbnail);
+            \Storage::delete($video->link_file);
+        }
+        $video->tags()->detach();
+        $video->delete();
         return redirect()->route('video.index')->with('success', 'Data berhasil dihapus');
     }
 

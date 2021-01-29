@@ -29,7 +29,8 @@
                     </div>
                 @endif
                 <h4 class="card-title">Data Video</h4>
-                <a href="{{ route('video.create')}}"><button class="btn btn-primary">Tambah Data</button></a>
+                <a href="{{ route('video.create')}}"><button class="btn btn-primary">Tambah Data Video YouTube</button></a>
+                <a href="{{ route('file.create')}}"><button class="btn btn-primary">Tambah Data Video</button></a>
                 <div class="table-responsive m-t-20">
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>

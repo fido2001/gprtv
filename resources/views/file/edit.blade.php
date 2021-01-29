@@ -14,7 +14,7 @@
             <h3 class="text-themecolor">Video</h3>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('/backend') }}">Home</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('file.index') }}">Video</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('video.index') }}">Video</a></li>
                 <li class="breadcrumb-item active">Edit Data</li>
             </ol>
         </div>
@@ -131,7 +131,7 @@
                             </div>
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Simpan</button>
-                                <a href="{{ route('file.index') }}" class="btn btn-inverse">Kembali</a>
+                                <a href="{{ route('video.index') }}" class="btn btn-inverse">Kembali</a>
                             </div>
                         </div>
                     </form>
