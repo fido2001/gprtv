@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,8 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::resource('instansi', 'InstansiController');
     Route::resource('video', 'VideoController');
     Route::resource('file', 'FileController');
+    Route::get('/thumbnail', 'HomeController@thumbnail')->name('admin.thumbnail');
+    Route::get('/link_yt', 'HomeController@link_yt')->name('admin.link_yt');
 });
 
 Auth::routes();

@@ -30,4 +30,14 @@ class HomeController extends Controller
     {
         return view('admin.index');
     }
+
+    public function thumbnail()
+    {
+        return view('video.thumbnail');
+    }
+
+    public function link_yt()
+    {
+        return view('video.link_yt');
+    }
 }

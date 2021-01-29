@@ -11,7 +11,7 @@
                     <!-- Dark Logo icon -->
                     <img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.png" alt="homepage" class="dark-logo" />
                     <!-- Light Logo icon -->
-                    <img src="https://www.gprtv.id/frontend/./asset/img/gpr-logo.jpg" style="width: 60px" alt="homepage" class="light-logo" />
+                    <img src="{{ URL('/frontend') }}/img/logo-gpr.png" style="width: 60px" alt="homepage" class="light-logo" />
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->

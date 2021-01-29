@@ -90,7 +90,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Link Thumbnail</label>
+                                        <h4 class="control-label">Link Thumbnail</h4>
+                                        <a href="{{ route('admin.thumbnail') }}"><small for="">Klik disini untuk melihat cara mendapatkan link thumbnail</small></a>
                                         <input type="text" name="thumbnail" class="form-control @error('thumbnail') is-invalid @enderror" required>
                                         @error('thumbnail')
                                             <span class="invalid-feedback" role="alert">
@@ -101,7 +102,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Link Youtube</label>
+                                        <h4 class="control-label">Link Youtube</h4>
+                                        <a href="{{ route('admin.link_yt') }}"><small for="">Klik disini untuk melihat cara mendapatkan link youtube</small></a>
                                         <input type="text" name="link_file" class="form-control @error('link_file') is-invalid @enderror" required>
                                         @error('link_file')
                                             <span class="invalid-feedback" role="alert">
