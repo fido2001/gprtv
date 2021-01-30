@@ -35,5 +35,21 @@
             .list-selasa, .list-rabu, .list-kamis, .list-jumat, .list-sabtu, .list-minggu {
                 display: none;
             }
+            @media only screen and (max-width: 1024px) {
+                .mobile-ver {
+                    display: inline-block;
+                }
+                .desktop {
+                    display: none;
+                }
+            }
+            @media only screen and (min-width: 1024px) {
+                .mobile-ver {
+                    display: none;
+                }
+                .desktop {
+                    display: block;
+                }
+            }
         </style>
 </head>

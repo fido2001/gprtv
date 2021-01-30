@@ -3,7 +3,18 @@
 @section('content')
     <div class="container">
         <h3 class="my-3">Jadwal Acara</h3>
-        <div>
+        <div class="mobile-ver">
+            <select id="days-selector" class="form-control">
+                <option value="list-senin">Senin</option>
+                <option value="list-selasa">Selasa</option>
+                <option value="list-rabu">Rabu</option>
+                <option value="list-kamis">Kamis</option>
+                <option value="list-jumat">Jumat</option>
+                <option value="list-sabtu">Sabtu</option>
+                <option value="list-minggu">Minggu</option>
+            </select>
+        </div>
+        <div class="desktop">
             <ul>
                 <li id="hari-senin" class="genric-btn info radius">Senin</li>
                 <li id="hari-selasa" class="genric-btn info-border radius">Selasa</li>
@@ -14,7 +25,7 @@
                 <li id="hari-minggu" class="genric-btn info-border radius">Minggu</li>
             </ul>
         </div>
-        <div class="list-senin" class="progress-table-wrap">
+        <div id="list-senin" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Senin</h4>
                 <div class="table-head">
@@ -69,7 +80,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-selasa" class="progress-table-wrap">
+        <div id="list-selasa" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Selasa</h4>
                 <div class="table-head">
@@ -124,7 +135,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-rabu" class="progress-table-wrap">
+        <div id="list-rabu" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Rabu</h4>
                 <div class="table-head">
@@ -179,7 +190,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-kamis" class="progress-table-wrap">
+        <div id="list-kamis" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Kamis</h4>
                 <div class="table-head">
@@ -234,7 +245,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-jumat" class="progress-table-wrap">
+        <div id="list-jumat" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Jumat</h4>
                 <div class="table-head">
@@ -289,7 +300,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-sabtu" class="progress-table-wrap">
+        <div id="list-sabtu" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Sabtu</h4>
                 <div class="table-head">
@@ -344,7 +355,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-minggu" class="progress-table-wrap">
+        <div id="list-minggu" class="days progress-table-wrap">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Minggu</h4>
                 <div class="table-head">
