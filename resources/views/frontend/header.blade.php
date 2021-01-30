@@ -36,7 +36,7 @@
                                             </ul>
                                         </li>
                                         <li><a href="{{ route('aboutus') }}">Tentang Kami</a></li>
-                                        <li><a href="latest_news.html">Jadwal Acara</a></li>
+                                        <li><a href="{{ route('jadwal') }}">Jadwal Acara</a></li>
                                         <li><a href="{{ route('live') }}">Live Streaming</a></li>
                                         @guest
                                         <li class="f-right"><a href="{{ route('login') }}">Masuk</a></li>

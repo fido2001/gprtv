@@ -29,5 +29,11 @@
                 display: flex;
                 justify-content: center;
             }
+            .list-senin {
+                display: block;
+            }
+            .list-selasa, .list-rabu, .list-kamis, .list-jumat, .list-sabtu, .list-minggu {
+                display: none;
+            }
         </style>
 </head>

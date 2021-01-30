@@ -93,4 +93,11 @@ class FrontendController extends Controller
             'dataKategori' => Category::get()
         ]);
     }
+
+    public function jadwal()
+    {
+        return view('frontend.jadwal', [
+            'dataKategori' => Category::get()
+        ]);
+    }
 }

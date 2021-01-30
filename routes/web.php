@@ -36,5 +36,6 @@ Route::get('/instansis/{instansi:slug}', 'FrontendController@showInstansi')->nam
 Route::get('search', 'FrontendController@search')->name('search.video');
 Route::get('tentangkami', 'FrontendController@aboutus')->name('aboutus');
 Route::get('live', 'FrontendController@live')->name('live');
+Route::get('jadwal', 'FrontendController@jadwal')->name('jadwal');
 
 Route::get('/home', 'HomeController@index')->name('home');
