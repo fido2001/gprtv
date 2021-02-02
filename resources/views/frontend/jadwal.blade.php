@@ -3,29 +3,31 @@
 @section('content')
     <div class="container">
         <h3 class="my-3">Jadwal Acara</h3>
+        <?php $tgl = Carbon\Carbon::now();
+        $hari = Carbon\Carbon::parse($tgl)->translatedFormat("l"); ?> 
         <div class="mobile-ver">
             <select id="days-selector" class="form-control">
-                <option value="list-senin">Senin</option>
-                <option value="list-selasa">Selasa</option>
-                <option value="list-rabu">Rabu</option>
-                <option value="list-kamis">Kamis</option>
-                <option value="list-jumat">Jumat</option>
-                <option value="list-sabtu">Sabtu</option>
-                <option value="list-minggu">Minggu</option>
+                <option value="list-senin" {{ $hari == 'Senin' ? 'selected' : '' }}>Senin</option>
+                <option value="list-selasa" {{ $hari == 'Selasa' ? 'selected' : '' }}>Selasa</option>
+                <option value="list-rabu" {{ $hari == 'Rabu' ? 'selected' : '' }}>Rabu</option>
+                <option value="list-kamis" {{ $hari == 'Kamis' ? 'selected' : '' }}>Kamis</option>
+                <option value="list-jumat" {{ $hari == 'Jumat' ? 'selected' : '' }}>Jumat</option>
+                <option value="list-sabtu" {{ $hari == 'Sabtu' ? 'selected' : '' }}>Sabtu</option>
+                <option value="list-minggu" {{ $hari == 'Minggu' ? 'selected' : '' }}>Minggu</option>
             </select>
         </div>
         <div class="desktop">
             <ul>
-                <li id="hari-senin" class="genric-btn info radius">Senin</li>
-                <li id="hari-selasa" class="genric-btn info-border radius">Selasa</li>
-                <li id="hari-rabu" class="genric-btn info-border radius">Rabu</li>
-                <li id="hari-kamis" class="genric-btn info-border radius">Kamis</li>
-                <li id="hari-jumat" class="genric-btn info-border radius">Jumat</li>
-                <li id="hari-sabtu" class="genric-btn info-border radius">Sabtu</li>
-                <li id="hari-minggu" class="genric-btn info-border radius">Minggu</li>
+                <li id="hari-senin" class="{{ $hari == 'Senin' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Senin</li>
+                <li id="hari-selasa" class="{{ $hari == 'Selasa' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Selasa</li>
+                <li id="hari-rabu" class="{{ $hari == 'Rabu' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Rabu</li>
+                <li id="hari-kamis" class="{{ $hari == 'Kamis' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Kamis</li>
+                <li id="hari-jumat" class="{{ $hari == 'Jumat' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Jumat</li>
+                <li id="hari-sabtu" class="{{ $hari == 'Sabtu' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Sabtu</li>
+                <li id="hari-minggu" class="{{ $hari == 'Minggu' ? 'genric-btn info radius' : 'genric-btn info-border radius' }}">Minggu</li>
             </ul>
         </div>
-        <div id="list-senin" class="days progress-table-wrap">
+        <div id="list-senin" class="days progress-table-wrap" style="display:{{ $hari == 'Senin' ? 'block' : 'none' }}" >
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Senin</h4>
                 <div class="table-head">
@@ -80,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div id="list-selasa" class="days progress-table-wrap">
+        <div id="list-selasa" class="days progress-table-wrap" style="display:{{ $hari == 'Selasa' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Selasa</h4>
                 <div class="table-head">
@@ -135,7 +137,7 @@
                 </div>
             </div>
         </div>
-        <div id="list-rabu" class="days progress-table-wrap">
+        <div id="list-rabu" class="days progress-table-wrap" style="display:{{ $hari == 'Rabu' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Rabu</h4>
                 <div class="table-head">
@@ -190,7 +192,7 @@
                 </div>
             </div>
         </div>
-        <div id="list-kamis" class="days progress-table-wrap">
+        <div id="list-kamis" class="days progress-table-wrap" style="display:{{ $hari == 'Kamis' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Kamis</h4>
                 <div class="table-head">
@@ -245,7 +247,7 @@
                 </div>
             </div>
         </div>
-        <div id="list-jumat" class="days progress-table-wrap">
+        <div id="list-jumat" class="days progress-table-wrap" style="display:{{ $hari == 'Jumat' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Jumat</h4>
                 <div class="table-head">
@@ -300,7 +302,7 @@
                 </div>
             </div>
         </div>
-        <div id="list-sabtu" class="days progress-table-wrap">
+        <div id="list-sabtu" class="days progress-table-wrap" style="display:{{ $hari == 'Sabtu' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Sabtu</h4>
                 <div class="table-head">
@@ -355,7 +357,7 @@
                 </div>
             </div>
         </div>
-        <div id="list-minggu" class="days progress-table-wrap">
+        <div id="list-minggu" class="days progress-table-wrap" style="display:{{ $hari == 'Minggu' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
                 <h4>Hari Minggu</h4>
                 <div class="table-head">

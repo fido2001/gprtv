@@ -29,12 +29,9 @@
                 display: flex;
                 justify-content: center;
             }
-            .list-senin {
-                display: block;
-            }
-            .list-selasa, .list-rabu, .list-kamis, .list-jumat, .list-sabtu, .list-minggu {
+            /* #list-selasa, #list-rabu, #list-kamis, #list-jumat, #list-sabtu, #list-minggu {
                 display: none;
-            }
+            } */
             @media only screen and (max-width: 1024px) {
                 .mobile-ver {
                     display: inline-block;
