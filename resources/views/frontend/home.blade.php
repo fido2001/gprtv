@@ -73,6 +73,8 @@
                             <span class="color1"><a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span>
                             <h4><a href="{{ route('show.video', $video->slug) }}">{{ $video->title }}</a></h4>
                         </div> --}}
+                        <?php $hari = Carbon\Carbon::parse($tgl)->translatedFormat("l") ?>
+                        @if ($hari == 'Senin')
                         <div class="progress-table-wrap">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
@@ -127,6 +129,337 @@
                                 </div>
                             </div>
                         </div>
+                        @elseif ($hari == 'Selasa')
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 370px">
+                                <div class="table-head">
+                                    {{-- <div class="serial">#</div> --}}
+                                    <div class="country" style="width: 45%">Jam</div>
+                                    <div class="visit" style="width: 55%">Program Acara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">00:30 - 02:00</div>
+                                    <div class="visit" style="width: 55%">Hiburan Wayang Selasa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">02:00 - 03:00</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Jejak Ki Djati Selasa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:00 - 03:30</div>
+                                    <div class="visit" style="width: 55%">Antara TV</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:30 - 04:00</div>
+                                    <div class="visit" style="width: 55%">Dokementer - Pesona Desa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:00 - 04:25</div>
+                                    <div class="visit" style="width: 55%">Hikayat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:25 - 04:30</div>
+                                    <div class="visit" style="width: 55%">INDONESIA RAYA</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:30 - 05:00</div>
+                                    <div class="visit" style="width: 55%">Video Grafis IB</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:00 - 05:30</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Juru Bicara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:30 - 06:30</div>
+                                    <div class="visit" style="width: 55%">Anak - Kanal Dongeng</div>
+                                </div>
+                            </div>
+                        </div>
+                        @elseif ($hari == 'Rabu')
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 370px">
+                                <div class="table-head">
+                                    {{-- <div class="serial">#</div> --}}
+                                    <div class="country" style="width: 45%">Jam</div>
+                                    <div class="visit" style="width: 55%">Program Acara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">00:30 - 02:00</div>
+                                    <div class="visit" style="width: 55%">Hiburan Wayang Rabu</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">02:00 - 03:00</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Jejak Ki Djati Rabu</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:00 - 03:30</div>
+                                    <div class="visit" style="width: 55%">Antara TV</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:30 - 04:00</div>
+                                    <div class="visit" style="width: 55%">Dokementer - Pesona Desa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:00 - 04:25</div>
+                                    <div class="visit" style="width: 55%">Hikayat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:25 - 04:30</div>
+                                    <div class="visit" style="width: 55%">INDONESIA RAYA</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:30 - 05:00</div>
+                                    <div class="visit" style="width: 55%">Video Grafis IB</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:00 - 05:30</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Juru Bicara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:30 - 06:30</div>
+                                    <div class="visit" style="width: 55%">Anak - Kanal Dongeng</div>
+                                </div>
+                            </div>
+                        </div>
+                        @elseif ($hari == 'Kamis')
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 370px">
+                                <div class="table-head">
+                                    {{-- <div class="serial">#</div> --}}
+                                    <div class="country" style="width: 45%">Jam</div>
+                                    <div class="visit" style="width: 55%">Program Acara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">00:30 - 02:00</div>
+                                    <div class="visit" style="width: 55%">Hiburan Wayang Kamis</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">02:00 - 03:00</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Jejak Ki Djati Kamis</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:00 - 03:30</div>
+                                    <div class="visit" style="width: 55%">Antara TV</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:30 - 04:00</div>
+                                    <div class="visit" style="width: 55%">Dokementer - Pesona Desa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:00 - 04:25</div>
+                                    <div class="visit" style="width: 55%">Hikayat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:25 - 04:30</div>
+                                    <div class="visit" style="width: 55%">INDONESIA RAYA</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:30 - 05:00</div>
+                                    <div class="visit" style="width: 55%">Video Grafis IB</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:00 - 05:30</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Juru Bicara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:30 - 06:30</div>
+                                    <div class="visit" style="width: 55%">Anak - Kanal Dongeng</div>
+                                </div>
+                            </div>
+                        </div>
+                        @elseif ($hari == 'Jumat')
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 370px">
+                                <div class="table-head">
+                                    {{-- <div class="serial">#</div> --}}
+                                    <div class="country" style="width: 45%">Jam</div>
+                                    <div class="visit" style="width: 55%">Program Acara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">00:30 - 02:00</div>
+                                    <div class="visit" style="width: 55%">Hiburan Wayang Jumat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">02:00 - 03:00</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Jejak Ki Djati Jumat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:00 - 03:30</div>
+                                    <div class="visit" style="width: 55%">Antara TV</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:30 - 04:00</div>
+                                    <div class="visit" style="width: 55%">Dokementer - Pesona Desa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:00 - 04:25</div>
+                                    <div class="visit" style="width: 55%">Hikayat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:25 - 04:30</div>
+                                    <div class="visit" style="width: 55%">INDONESIA RAYA</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:30 - 05:00</div>
+                                    <div class="visit" style="width: 55%">Video Grafis IB</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:00 - 05:30</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Juru Bicara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:30 - 06:30</div>
+                                    <div class="visit" style="width: 55%">Anak - Kanal Dongeng</div>
+                                </div>
+                            </div>
+                        </div>
+                        @elseif ($hari == 'Sabtu')
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 370px">
+                                <div class="table-head">
+                                    {{-- <div class="serial">#</div> --}}
+                                    <div class="country" style="width: 45%">Jam</div>
+                                    <div class="visit" style="width: 55%">Program Acara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">00:30 - 02:00</div>
+                                    <div class="visit" style="width: 55%">Hiburan Wayang Sabtu</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">02:00 - 03:00</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Jejak Ki Djati Sabtu</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:00 - 03:30</div>
+                                    <div class="visit" style="width: 55%">Antara TV</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:30 - 04:00</div>
+                                    <div class="visit" style="width: 55%">Dokementer - Pesona Desa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:00 - 04:25</div>
+                                    <div class="visit" style="width: 55%">Hikayat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:25 - 04:30</div>
+                                    <div class="visit" style="width: 55%">INDONESIA RAYA</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:30 - 05:00</div>
+                                    <div class="visit" style="width: 55%">Video Grafis IB</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:00 - 05:30</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Juru Bicara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:30 - 06:30</div>
+                                    <div class="visit" style="width: 55%">Anak - Kanal Dongeng</div>
+                                </div>
+                            </div>
+                        </div>
+                        @elseif ($hari == 'Minggu')
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 370px">
+                                <div class="table-head">
+                                    {{-- <div class="serial">#</div> --}}
+                                    <div class="country" style="width: 45%">Jam</div>
+                                    <div class="visit" style="width: 55%">Program Acara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">00:30 - 02:00</div>
+                                    <div class="visit" style="width: 55%">Hiburan Wayang Minggu</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">02:00 - 03:00</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Jejak Ki Djati Minggu</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:00 - 03:30</div>
+                                    <div class="visit" style="width: 55%">Antara TV</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">03:30 - 04:00</div>
+                                    <div class="visit" style="width: 55%">Dokementer - Pesona Desa</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:00 - 04:25</div>
+                                    <div class="visit" style="width: 55%">Hikayat</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:25 - 04:30</div>
+                                    <div class="visit" style="width: 55%">INDONESIA RAYA</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">04:30 - 05:00</div>
+                                    <div class="visit" style="width: 55%">Video Grafis IB</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:00 - 05:30</div>
+                                    <div class="visit" style="width: 55%">Talkshow - Juru Bicara</div>
+                                </div>
+                                <div class="table-row">
+                                    {{-- <div class="serial">01</div> --}}
+                                    <div class="country" style="width: 45%">05:30 - 06:30</div>
+                                    <div class="visit" style="width: 55%">Anak - Kanal Dongeng</div>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
                     </div>
                     {{-- @endforeach --}}
                     </ul>

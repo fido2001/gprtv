@@ -127,7 +127,7 @@
                             </div>
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Simpan</button>
-                                <a href="{{ route('file.index') }}" class="btn btn-inverse">Kembali</a>
+                                <a href="{{ route('video.index') }}" class="btn btn-inverse">Kembali</a>
                             </div>
                         </div>
                     </form>
