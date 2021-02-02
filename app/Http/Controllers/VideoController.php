@@ -55,8 +55,10 @@ class VideoController extends Controller
             $fileType = $request->file('cover')->extension();
             $name = \Str::random(8) . '.' . $fileType;
             $new_cover = Storage::putFileAs('cover', $request->file('cover'), $name);
+            $attr['thumbnail'] = $new_cover;
+        } else {
+            $attr['thumbnail'] = $request->thumbnail;
         }
-        $attr['thumbnail'] = $new_cover;
 
         if ($request->file('file_video')) {
             $request->validate([
@@ -65,8 +67,10 @@ class VideoController extends Controller
             $videoType = $request->file('file_video')->extension();
             $video = \Str::random(8) . '.' . $videoType;
             $new_video = Storage::putFileAs('video', $request->file('file_video'), $video);
+            $attr['link_file'] = $new_video;
+        } else {
+            $attr['link_file'] = $request->link_file;
         }
-        $attr['link_file'] = $new_video;
 
         $slug = \Str::slug($request->title);
         $attr['slug'] = $slug;
