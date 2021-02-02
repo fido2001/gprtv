@@ -86,7 +86,11 @@
                         <h3 class="widget_title">Video Terbaru</h3>
                         @foreach ($videos as $video)
                         <div class="media post_item">
+                            @if ($video->cover != null)
+                            <img style="width: 50%" src="{{ URL('../storage/'.$video->thumbnail)}}" alt="post">
+                            @else
                             <img style="width: 50%" src="{{ $video->thumbnail }}" alt="post">
+                            @endif
                             <div class="media-body">
                                 <a href="{{ route('show.video', $video->slug) }}">
                                     <h3>{{ Str::limit($video->title, 25) }}</h3>

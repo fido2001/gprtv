@@ -486,8 +486,12 @@
                     <div class="weekly-news-active dot-style d-flex dot-style">
                         @foreach ($filmPendek as $film)
                         <div class="weekly-single">
-                            <div class="weekly-img" style="border: 2px solid #fc3f00; border-radius: 5px">
-                                <img style="width: 366px; height: 430px" src="{{ $film->thumbnail }}" alt="">
+                            <div class="weekly-img" style="border: 1px solid #fc3f00; border-radius: 5px">
+                                @if ($film->cover != null)
+                                <img style="width: 368px; height: 430px" src="{{ URL('../storage/'.$video->thumbnail)}}" alt="">
+                                @else
+                                <img style="width: 368px; height: 430px" src="{{ $film->thumbnail }}" alt="">
+                                @endif
                             </div>
                             <div class="weekly-caption">
                                 {{-- <span class="color1">Strike</span> --}}
@@ -936,7 +940,11 @@
                         @foreach ($videoKominfo as $kominfo)
                         <div class="weekly2-single">
                             <div class="weekly2-img">
+                                @if ($kominfo->cover != null)
+                                <img style="height: 180px" src="{{ URL('../storage/'.$kominfo->thumbnail)}}" alt="">    
+                                @else
                                 <img style="height: 180px" src="{{ $kominfo->thumbnail }}" alt="">
+                                @endif
                             </div>
                             <div class="weekly2-caption">
                                 <span class="color1"><a style="color: black" href="{{ route('show.category', $kominfo->category->slug) }}">{{ $kominfo->category->name }}</a></span>
@@ -1052,7 +1060,11 @@
                         @foreach ($videoBerita as $berita)
                         <div class="single-recent mb-100">
                             <div class="what-img">
+                                @if ($berita->cover != null)
+                                <img src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">
+                                @else
                                 <img src="{{ $berita->thumbnail }}" alt="">
+                                @endif
                             </div>
                             <div class="what-cap">
                                 <span class="color3">{{ $berita->category->name }}</span>
