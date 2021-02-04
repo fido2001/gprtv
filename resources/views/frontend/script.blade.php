@@ -33,6 +33,7 @@
         <script>
             new Clappr.Player({
             source: "https://h1.intechmedia.net/intech/ch66.m3u8",
+            poster: 'https://www.gprtv.id/frontend/img/logo-gpr.png',
             mimeType: "application/x-mpegURL",
             mute: false,
             autoPlay: false,

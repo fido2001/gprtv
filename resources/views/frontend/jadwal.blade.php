@@ -29,387 +29,114 @@
         </div>
         <div id="list-senin" class="days progress-table-wrap" style="display:{{ $hari == 'Senin' ? 'block' : 'none' }}" >
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Senin</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
-                <div class="table-row">
+                @foreach ($jadwalSenin as $senin)
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang</div>
+                    <div class="country" style="width: 30%">{{ $senin->mulai }} - {{ $senin->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $senin->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div id="list-selasa" class="days progress-table-wrap" style="display:{{ $hari == 'Selasa' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Selasa</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
+                @foreach ($jadwalSelasa as $selasa)
                 <div class="table-row">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang Selasa</div>
+                    <div class="country" style="width: 30%">{{ $selasa->mulai }} - {{ $selasa->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $selasa->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati Selasa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div id="list-rabu" class="days progress-table-wrap" style="display:{{ $hari == 'Rabu' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Rabu</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
+                @foreach ($jadwalRabu as $rabu)
                 <div class="table-row">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang Rabu</div>
+                    <div class="country" style="width: 30%">{{ $rabu->mulai }} - {{ $rabu->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $rabu->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati Rabu</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div id="list-kamis" class="days progress-table-wrap" style="display:{{ $hari == 'Kamis' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Kamis</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
+                @foreach ($jadwalKamis as $kamis)
                 <div class="table-row">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang Kamis</div>
+                    <div class="country" style="width: 30%">{{ $kamis->mulai }} - {{ $kamis->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $kamis->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati Kamis</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div id="list-jumat" class="days progress-table-wrap" style="display:{{ $hari == 'Jumat' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Jumat</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
+                @foreach ($jadwalJumat as $jumat)
                 <div class="table-row">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang Jumat</div>
+                    <div class="country" style="width: 30%">{{ $jumat->mulai }} - {{ $jumat->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $jumat->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati Jumat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div id="list-sabtu" class="days progress-table-wrap" style="display:{{ $hari == 'Sabtu' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Sabtu</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
+                @foreach ($jadwalSabtu as $sabtu)
                 <div class="table-row">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang Sabtu</div>
+                    <div class="country" style="width: 30%">{{ $sabtu->mulai }} - {{ $sabtu->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $sabtu->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati Sabtu</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div id="list-minggu" class="days progress-table-wrap" style="display:{{ $hari == 'Minggu' ? 'block' : 'none' }}">
             <div class="progress-table" style="min-width: 370px">
-                <h4>Hari Minggu</h4>
                 <div class="table-head">
                     {{-- <div class="serial">#</div> --}}
-                    <div class="country" style="width: 30%">Jam</div>
-                    <div class="visit" style="width: 70%">Program Acara</div>
+                    <div class="country" style="width: 30%">Pukul</div>
+                    <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
+                @foreach ($jadwalMinggu as $minggu)
                 <div class="table-row">
                     {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">00:30 - 02:00</div>
-                    <div class="visit" style="width: 70%">Hiburan Wayang Minggu</div>
+                    <div class="country" style="width: 30%">{{ $minggu->mulai }} - {{ $minggu->selesai }}</div>
+                    <div class="visit" style="width: 70%">{{ $minggu->acara }}</div>
                 </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">02:00 - 03:00</div>
-                    <div class="visit" style="width: 70%">Talkshow - Jejak Ki Djati Minggu</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:00 - 03:30</div>
-                    <div class="visit" style="width: 70%">Antara TV</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">03:30 - 04:00</div>
-                    <div class="visit" style="width: 70%">Dokementer - Pesona Desa</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:00 - 04:25</div>
-                    <div class="visit" style="width: 70%">Hikayat</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:25 - 04:30</div>
-                    <div class="visit" style="width: 70%">INDONESIA RAYA</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">04:30 - 05:00</div>
-                    <div class="visit" style="width: 70%">Video Grafis IB</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:00 - 05:30</div>
-                    <div class="visit" style="width: 70%">Talkshow - Juru Bicara</div>
-                </div>
-                <div class="table-row">
-                    {{-- <div class="serial">01</div> --}}
-                    <div class="country" style="width: 30%">05:30 - 06:30</div>
-                    <div class="visit" style="width: 70%">Anak - Kanal Dongeng</div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Instansi;
+use App\Jadwal;
 use App\Tag;
 use App\Video;
 use Illuminate\Http\Request;
@@ -21,7 +22,14 @@ class FrontendController extends Controller
             'videoDrama' => Video::where('category_id', '6')->latest()->take(5)->get(),
             'dramaCaption' => Video::where('category_id', '6')->latest()->take(1)->get(),
             'videoBerita' => Video::where('category_id', '8')->latest()->take(4)->get(),
-            'dataKategori' => Category::get()
+            'dataKategori' => Category::get(),
+            'jadwalSenin' => Jadwal::where('hari', 'Senin')->get(),
+            'jadwalSelasa' => Jadwal::where('hari', 'Selasa')->get(),
+            'jadwalRabu' => Jadwal::where('hari', 'Rabu')->get(),
+            'jadwalKamis' => Jadwal::where('hari', 'Kamis')->get(),
+            'jadwalJumat' => Jadwal::where('hari', 'Jumat')->get(),
+            'jadwalSabtu' => Jadwal::where('hari', 'Sabtu')->get(),
+            'jadwalMinggu' => Jadwal::where('hari', 'Minggu')->get()
         ]);
     }
 
@@ -97,7 +105,14 @@ class FrontendController extends Controller
     public function jadwal()
     {
         return view('frontend.jadwal', [
-            'dataKategori' => Category::get()
+            'dataKategori' => Category::get(),
+            'jadwalSenin' => Jadwal::where('hari', 'Senin')->get(),
+            'jadwalSelasa' => Jadwal::where('hari', 'Selasa')->get(),
+            'jadwalRabu' => Jadwal::where('hari', 'Rabu')->get(),
+            'jadwalKamis' => Jadwal::where('hari', 'Kamis')->get(),
+            'jadwalJumat' => Jadwal::where('hari', 'Jumat')->get(),
+            'jadwalSabtu' => Jadwal::where('hari', 'Sabtu')->get(),
+            'jadwalMinggu' => Jadwal::where('hari', 'Minggu')->get(),
         ]);
     }
 }

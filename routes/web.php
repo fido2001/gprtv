@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::resource('instansi', 'InstansiController');
     Route::resource('video', 'VideoController');
     Route::resource('file', 'FileController');
+    Route::resource('jadwal', 'JadwalController');
     Route::get('/thumbnail', 'HomeController@thumbnail')->name('admin.thumbnail');
     Route::get('/link_yt', 'HomeController@link_yt')->name('admin.link_yt');
 });
@@ -36,6 +37,6 @@ Route::get('/instansis/{instansi:slug}', 'FrontendController@showInstansi')->nam
 Route::get('search', 'FrontendController@search')->name('search.video');
 Route::get('tentangkami', 'FrontendController@aboutus')->name('aboutus');
 Route::get('live', 'FrontendController@live')->name('live');
-Route::get('jadwal', 'FrontendController@jadwal')->name('jadwal');
+Route::get('jadwalacara', 'FrontendController@jadwal')->name('jadwal');
 
 Route::get('/home', 'HomeController@index')->name('home');

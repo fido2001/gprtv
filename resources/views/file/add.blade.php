@@ -2,7 +2,7 @@
 
 @section('css')
 <link href="{{ URL('/') }}/assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
-<link rel="stylesheet" href="{{url('/')}}/assets/plugins/dropify/dist/css/dropify.min.css">
+<link rel="stylesheet" href="{{URL('/')}}/assets/plugins/dropify/dist/css/dropify.min.css">
 <link href="{{ URL('/') }}/assets/plugins/summernote/dist/summernote.css" rel="stylesheet"/>
 @endsection
 
@@ -13,7 +13,7 @@
         <div class="col-md-5 col-8 align-self-center">
             <h3 class="text-themecolor">Video</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('/backend') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/admin') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('video.index') }}">Video</a></li>
                 <li class="breadcrumb-item active">Tambah Data</li>
             </ol>

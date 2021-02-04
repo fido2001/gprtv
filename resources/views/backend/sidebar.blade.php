@@ -51,6 +51,9 @@
                 <li>
                     <a href="{{ route('video.index') }}" aria-expanded="false"><i class="fa fa-play"></i><span class="hide-menu">Video</span></a>
                 </li>
+                <li>
+                    <a href="{{ route('jadwal.index') }}" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Jadwal Acara</span></a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

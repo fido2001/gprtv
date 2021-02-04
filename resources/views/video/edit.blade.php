@@ -12,7 +12,7 @@
         <div class="col-md-5 col-8 align-self-center">
             <h3 class="text-themecolor">Video</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('/backend') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/admin') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('video.index') }}">Video</a></li>
                 <li class="breadcrumb-item active">Edit Data</li>
             </ol>

@@ -8,7 +8,7 @@
                         <!-- Logo -->
                         <div class="col-xl-3 col-lg-3 col-md-3">
                             <div class="logo">
-                                <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 150px"></a>
+                                <a href="{{ URL('/') }}"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 150px"></a>
                             </div>
                         </div>
                     </div>
@@ -27,6 +27,7 @@
                                 <nav>                  
                                     <ul id="navigation">    
                                         <li><a href="{{ URL('/') }}">Beranda</a></li>
+                                        <li class="gradient-text"><a href="{{ route('live') }}">Live Streaming</a></li>
                                         <li><a href="{{ route('all.video') }}">Video</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ route('all.video') }}">Semua Video</a>
@@ -35,9 +36,8 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('aboutus') }}">Tentang Kami</a></li>
                                         <li><a href="{{ route('jadwal') }}">Jadwal Acara</a></li>
-                                        <li><a href="{{ route('live') }}">Live Streaming</a></li>
+                                        <li><a href="{{ route('aboutus') }}">Tentang Kami</a></li>
                                         @guest
                                         <li class="f-right"><a href="{{ route('login') }}">Masuk</a></li>
                                         @else
