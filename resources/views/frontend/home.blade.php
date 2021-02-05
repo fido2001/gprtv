@@ -83,7 +83,7 @@
                         <?php $hari = Carbon\Carbon::parse($tgl)->translatedFormat("l") ?>
                         @if ($hari == 'Senin')
                         <div class="progress-table-wrap">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Pukul</div>
