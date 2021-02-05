@@ -18,6 +18,11 @@
 		<script src="{{ URL('/frontend') }}/js/animated.headline.js"></script>
         <script src="{{ URL('/frontend') }}/js/jquery.magnific-popup.js"></script>
 
+        <!-- Breaking New Pluging -->
+        <script src="{{ URL('/frontend') }}/js/jquery.ticker.js"></script>
+        <script src="{{ URL('/frontend') }}/js/site.js"></script>
+
+
 		<!-- Scrollup, nice-select, sticky -->
         <script src="{{ URL('/frontend') }}/js/jquery.scrollUp.min.js"></script>
         <script src="{{ URL('/frontend') }}/js/jquery.nice-select.min.js"></script>

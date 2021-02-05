@@ -31,7 +31,7 @@
                         @method('PATCH')
                         <div class="form-body">
                             <div class="row p-t-20">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label">Hari</label>
                                         <select name="hari" class="select2 @error('hari') is-invalid @enderror" style="width: 100%">

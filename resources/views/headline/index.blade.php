@@ -7,10 +7,10 @@
     <!-- ============================================================== -->
     <div class="row page-titles">
         <div class="col-md-5 col-8 align-self-center">
-            <h3 class="text-themecolor m-b-0 m-t-0">Kategori</h3>
+            <h3 class="text-themecolor m-b-0 m-t-0">Headline</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ URL('/admin') }}">Home</a></li>
-                <li class="breadcrumb-item active">Kategori</li>
+                <li class="breadcrumb-item"><a href="{{ URL('/') }}">Home</a></li>
+                <li class="breadcrumb-item active">Headline</li>
             </ol>
         </div>
     </div>
@@ -28,27 +28,27 @@
                         </div>
                     </div>
                 @endif
-                <h4 class="card-title">Data Kategori</h4>
-                <a href="{{ route('category.create')}}"><button class="btn btn-primary">Tambah Data</button></a>
+                <h4 class="card-title">Data Headline</h4>
+                <a href="{{ route('headline.create')}}"><button class="btn btn-primary">Tambah Data</button></a>
                 <div class="table-responsive m-t-20">
                     <table id="myTable" class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th style="width: 60%">Kategori</th>
+                                <th style="width: 60%">Headline</th>
 
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($dataKategori as $no => $category)
+                            @foreach ($dataHeadline as $no => $headline)
                             <tr>
                                 <td>{{ $no+1 }}</td>
-                                <td>{{ $category->name }}</td>
+                                <td>{{ $headline->tulisan }}</td>
                                 <td>
-                                    <a href="{{ route('category.edit', $category->id) }}" class="badge badge-info">Edit</a>
-                                    <a href="#" data-id="{{ $category->id }}" class="badge badge-danger sa-params">
-                                        <form action="{{ route('category.destroy', $category->id) }}" id="delete{{ $category->id }}" method="POST">
+                                    <a href="{{ route('headline.edit', $headline->id) }}" class="badge badge-info">Edit</a>
+                                    <a href="#" data-id="{{ $headline->id }}" class="badge badge-danger sa-params">
+                                        <form action="{{ route('headline.destroy', $headline->id) }}" id="delete{{ $headline->id }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         </form>

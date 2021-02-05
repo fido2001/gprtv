@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Headline;
 use App\Instansi;
 use App\Jadwal;
 use App\Tag;
@@ -29,7 +30,8 @@ class FrontendController extends Controller
             'jadwalKamis' => Jadwal::where('hari', 'Kamis')->get(),
             'jadwalJumat' => Jadwal::where('hari', 'Jumat')->get(),
             'jadwalSabtu' => Jadwal::where('hari', 'Sabtu')->get(),
-            'jadwalMinggu' => Jadwal::where('hari', 'Minggu')->get()
+            'jadwalMinggu' => Jadwal::where('hari', 'Minggu')->get(),
+            'dataHeadline' => Headline::get()
         ]);
     }
 

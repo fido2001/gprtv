@@ -7,7 +7,7 @@
         <div class="col-md-5 col-8 align-self-center">
             <h3 class="text-themecolor">Kategori</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('/backend') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/admin') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Kategori</a></li>
                 <li class="breadcrumb-item active">Tambah Data</li>
             </ol>

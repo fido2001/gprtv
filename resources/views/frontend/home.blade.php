@@ -10,6 +10,13 @@
                 <div class="col-lg-12">
                     <span class="trending-tittle" style="padding-bottom: 1px">
                         <strong>Video Terbaru</strong>
+                        <div class="trending-animated">
+                            <ul id="js-news" class="js-hidden">
+                                @foreach ($dataHeadline as $headline)
+                                <li class="news-item">{{ $headline->tulisan }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </span>
                 </div>
             </div>

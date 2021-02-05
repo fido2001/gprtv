@@ -54,6 +54,9 @@
                 <li>
                     <a href="{{ route('jadwal.index') }}" aria-expanded="false"><i class="fa fa-clock-o"></i><span class="hide-menu">Jadwal Acara</span></a>
                 </li>
+                <li>
+                    <a href="{{ route('headline.index') }}" aria-expanded="false"><i class="fa fa-pencil"></i><span class="hide-menu">Teks Headline</span></a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
