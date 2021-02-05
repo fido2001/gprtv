@@ -61,7 +61,7 @@ class JadwalController extends Controller
     {
         $validation = $request->validate(
             [
-                'acara' => 'required|max:30',
+                'acara' => 'required|max:75',
                 'hari' => 'required',
                 'mulai' => 'required',
                 'selesai' => 'required',
@@ -71,7 +71,7 @@ class JadwalController extends Controller
                 'hari.required' => 'Data tidak boleh kosong, harap diisi',
                 'mulai.required' => 'Data tidak boleh kosong, harap diisi',
                 'selesai.required' => 'Data tidak boleh kosong, harap diisi',
-                'acara.max' => 'Maksimal 30 karakter',
+                'acara.max' => 'Maksimal 75 karakter',
             ]
         );
     }
