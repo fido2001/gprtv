@@ -5898,8 +5898,6 @@ del {
 
 .progress-table-wrap {
     overflow-x: scroll;
-    height: 600px;
-    overflow: auto;
 }
 
 .progress-table {

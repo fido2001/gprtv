@@ -82,7 +82,7 @@
                         </div> --}}
                         <?php $hari = Carbon\Carbon::parse($tgl)->translatedFormat("l") ?>
                         @if ($hari == 'Senin')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         @elseif ($hari == 'Selasa')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                         @elseif ($hari == 'Rabu')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
@@ -133,7 +133,7 @@
                             </div>
                         </div>
                         @elseif ($hari == 'Kamis')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                         @elseif ($hari == 'Jumat')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
@@ -167,7 +167,7 @@
                             </div>
                         </div>
                         @elseif ($hari == 'Sabtu')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
@@ -184,7 +184,7 @@
                             </div>
                         </div>
                         @elseif ($hari == 'Minggu')
-                        <div class="progress-table-wrap">
+                        <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
                             <div class="progress-table" style="min-width: 370px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
