@@ -100,7 +100,7 @@
                         </div>
                         @elseif ($hari == 'Selasa')
                         <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Pukul</div>
@@ -117,7 +117,7 @@
                         </div>
                         @elseif ($hari == 'Rabu')
                         <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Jam</div>
@@ -134,7 +134,7 @@
                         </div>
                         @elseif ($hari == 'Kamis')
                         <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Pukul</div>
@@ -151,7 +151,7 @@
                         </div>
                         @elseif ($hari == 'Jumat')
                         <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Pukul</div>
@@ -168,7 +168,7 @@
                         </div>
                         @elseif ($hari == 'Sabtu')
                         <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Pukul</div>
@@ -185,7 +185,7 @@
                         </div>
                         @elseif ($hari == 'Minggu')
                         <div class="progress-table-wrap" style="height: 600px; overflow: auto;">
-                            <div class="progress-table" style="min-width: 370px">
+                            <div class="progress-table" style="min-width: 350px">
                                 <div class="table-head">
                                     {{-- <div class="serial">#</div> --}}
                                     <div class="country" style="width: 45%">Pukul</div>
