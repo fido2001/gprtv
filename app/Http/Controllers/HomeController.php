@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Instansi;
+use App\User;
+use App\Video;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,7 +32,11 @@ class HomeController extends Controller
 
     public function admin()
     {
-        return view('admin.index');
+        $kategori = count(Category::get());
+        $pengguna = count(User::where('level', 'user')->get());
+        $video = count(Video::get());
+        $instansi = count(Instansi::get());
+        return view('admin.index', compact('kategori', 'pengguna', 'video', 'instansi'));
     }
 
     public function thumbnail()

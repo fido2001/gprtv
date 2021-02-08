@@ -51,7 +51,7 @@
                     <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
                 @foreach ($jadwalSelasa as $selasa)
-                <div class="table-row">
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
                     <div class="country" style="width: 30%">{{ $selasa->mulai }} - {{ $selasa->selesai }}</div>
                     <div class="visit" style="width: 70%">{{ $selasa->acara }}</div>
@@ -67,7 +67,7 @@
                     <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
                 @foreach ($jadwalRabu as $rabu)
-                <div class="table-row">
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
                     <div class="country" style="width: 30%">{{ $rabu->mulai }} - {{ $rabu->selesai }}</div>
                     <div class="visit" style="width: 70%">{{ $rabu->acara }}</div>
@@ -83,7 +83,7 @@
                     <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
                 @foreach ($jadwalKamis as $kamis)
-                <div class="table-row">
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
                     <div class="country" style="width: 30%">{{ $kamis->mulai }} - {{ $kamis->selesai }}</div>
                     <div class="visit" style="width: 70%">{{ $kamis->acara }}</div>
@@ -99,7 +99,7 @@
                     <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
                 @foreach ($jadwalJumat as $jumat)
-                <div class="table-row">
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
                     <div class="country" style="width: 30%">{{ $jumat->mulai }} - {{ $jumat->selesai }}</div>
                     <div class="visit" style="width: 70%">{{ $jumat->acara }}</div>
@@ -115,7 +115,7 @@
                     <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
                 @foreach ($jadwalSabtu as $sabtu)
-                <div class="table-row">
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
                     <div class="country" style="width: 30%">{{ $sabtu->mulai }} - {{ $sabtu->selesai }}</div>
                     <div class="visit" style="width: 70%">{{ $sabtu->acara }}</div>
@@ -131,7 +131,7 @@
                     <div class="visit" style="width: 70%">Nama Acara</div>
                 </div>
                 @foreach ($jadwalMinggu as $minggu)
-                <div class="table-row">
+                <div class="table-row" style="padding: 15px 0">
                     {{-- <div class="serial">01</div> --}}
                     <div class="country" style="width: 30%">{{ $minggu->mulai }} - {{ $minggu->selesai }}</div>
                     <div class="visit" style="width: 70%">{{ $minggu->acara }}</div>

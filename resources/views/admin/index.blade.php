@@ -29,7 +29,7 @@
                     <div class="d-flex flex-row">
                         <div class="round round-lg align-self-center round-info"><i class="fa fa-book"></i></div>
                         <div class="m-l-10 align-self-center">
-                            {{-- <h3 class="m-b-0 font-light">{{ $buku }}</h3> --}}
+                            <h3 class="m-b-0 font-light">{{ $kategori }}</h3>
                             <h5 class="text-muted m-b-0">Kategori</h5></div>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                     <div class="d-flex flex-row">
                         <div class="round round-lg align-self-center round-warning"><i class="fa fa-users"></i></div>
                         <div class="m-l-10 align-self-center">
-                            {{-- <h3 class="m-b-0 font-lgiht">{{ $anggota }}</h3> --}}
+                            <h3 class="m-b-0 font-lgiht">{{ $pengguna }}</h3>
                             <h5 class="text-muted m-b-0">Pengguna</h5></div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                     <div class="d-flex flex-row">
                         <div class="round round-lg align-self-center round-primary"><i class="fa  fa-bar-chart-o"></i></div>
                         <div class="m-l-10 align-self-center">
-                            {{-- <h3 class="m-b-0 font-lgiht">{{$peminjaman}}</h3> --}}
+                            <h3 class="m-b-0 font-lgiht">{{ $video }}</h3>
                             <h5 class="text-muted m-b-0">Video</h5></div>
                     </div>
                 </div>
@@ -68,10 +68,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex flex-row">
-                        <div class="round round-lg align-self-center round-primary"><i class="fa  fa-bar-chart-o"></i></div>
+                        <div class="round round-lg align-self-center round-danger"><i class="fa  fa-home"></i></div>
                         <div class="m-l-10 align-self-center">
-                            {{-- <h3 class="m-b-0 font-lgiht">{{$peminjaman}}</h3> --}}
-                            <h5 class="text-muted m-b-0">Video</h5></div>
+                            <h3 class="m-b-0 font-lgiht">{{ $instansi }}</h3>
+                            <h5 class="text-muted m-b-0">Instansi</h5></div>
                     </div>
                 </div>
             </div>
