@@ -23,6 +23,7 @@ Route::group(['middleware' => ['auth', 'ceklevel:admin']], function () {
     Route::resource('file', 'FileController');
     Route::resource('jadwal', 'JadwalController');
     Route::resource('headline', 'HeadlineController');
+    Route::resource('tayang', 'TayangController');
     Route::get('/thumbnail', 'HomeController@thumbnail')->name('admin.thumbnail');
     Route::get('/link_yt', 'HomeController@link_yt')->name('admin.link_yt');
 });

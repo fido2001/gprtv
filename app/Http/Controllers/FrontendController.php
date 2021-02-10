@@ -7,6 +7,7 @@ use App\Headline;
 use App\Instansi;
 use App\Jadwal;
 use App\Tag;
+use App\Tayang;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -100,7 +101,8 @@ class FrontendController extends Controller
     public function live()
     {
         return view('video.live', [
-            'dataKategori' => Category::get()
+            'dataKategori' => Category::get(),
+            'jadwalTayang' => Tayang::get()
         ]);
     }
 

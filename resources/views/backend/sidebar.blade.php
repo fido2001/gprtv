@@ -57,6 +57,9 @@
                 <li>
                     <a href="{{ route('headline.index') }}" aria-expanded="false"><i class="fa fa-pencil"></i><span class="hide-menu">Teks Headline</span></a>
                 </li>
+                <li>
+                    <a href="{{ route('tayang.index') }}" aria-expanded="false"><i class="fa fa-pencil"></i><span class="hide-menu">Acara sedang Tayang</span></a>
+                </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->
