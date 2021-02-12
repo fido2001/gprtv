@@ -9,17 +9,61 @@
             <div class="row">
                 <div class="col-lg-12">
                     <span class="trending-tittle" style="padding-bottom: 1px">
-                        <strong>Video Terbaru</strong>
-                        <div class="trending-animated">
-                            <ul id="js-news" class="js-hidden">
-                                @foreach ($dataHeadline as $headline)
-                                <li class="news-item">{{ $headline->tulisan }}</li>
-                                @endforeach
-                            </ul>
+                        <strong>Berita Terbaru</strong>
+                        <div class="desktop">
+                            <div class="trending-animated">
+                                <ul id="js-news" class="js-hidden">
+                                    @foreach ($dataHeadline as $headline)
+                                    <li class="news-item">{{ $headline->tulisan }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                     </span>
                 </div>
             </div>
+            <div class="recent-articles">
+                <div class="container">
+                    <div class="recent-wrapper">
+                        <!-- section Tittle -->
+                        {{-- <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-tittle mb-30">
+                                    <h3>Berita Terbaru</h3>
+                                </div>
+                            </div>
+                        </div> --}}
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="recent-active dot-style d-flex dot-style">
+                                    @foreach ($videoBerita as $berita)
+                                    <div class="single-recent mb-100">
+                                        <div class="what-img">
+                                            @if ($berita->cover != null)
+                                            <img src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">
+                                            @else
+                                            <img src="{{ $berita->thumbnail }}" alt="">
+                                            @endif
+                                        </div>
+                                        <div class="what-cap">
+                                            {{-- <span class="color3">{{ $berita->category->name }}</span> --}}
+                                            <h4><a href="{{ route('show.video', $berita->slug) }}">{{ Str::limit($berita->title, 55) }}</a></h4>
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="mobile-ver">
+                                <marquee behavior="scroll" direction="left">
+                                    @foreach ($dataHeadline as $headline)
+                                        {{ $headline->tulisan }} |
+                                    @endforeach
+                                </marquee>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>      
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Trending Top -->
@@ -227,7 +271,7 @@
                     <div class="weekly-news-active dot-style d-flex dot-style">
                         @foreach ($filmPendek as $film)
                         <div class="weekly-single">
-                            <div class="weekly-img" style="border: 1px solid #fc3f00; border-radius: 5px">
+                            <div class="weekly-img">
                                 @if ($film->cover != null)
                                 <img style="width: 368px; height: 430px" src="{{ URL('../storage/'.$video->thumbnail)}}" alt="">
                                 @else
@@ -755,40 +799,6 @@
 </div> 
 <!-- End Start youtube -->
 <!--  Recent Articles start -->
-<div class="recent-articles">
-    <div class="container">
-        <div class="recent-wrapper">
-            <!-- section Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle mb-30">
-                        <h3>Berita Terbaru</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="recent-active dot-style d-flex dot-style">
-                        @foreach ($videoBerita as $berita)
-                        <div class="single-recent mb-100">
-                            <div class="what-img">
-                                @if ($berita->cover != null)
-                                <img src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">
-                                @else
-                                <img src="{{ $berita->thumbnail }}" alt="">
-                                @endif
-                            </div>
-                            <div class="what-cap">
-                                <span class="color3">{{ $berita->category->name }}</span>
-                                <h4><a href="{{ route('show.video', $berita->slug) }}">{{ $berita->title }}</a></h4>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>           
+     
 <!--Recent Articles End -->
 @endsection

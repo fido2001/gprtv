@@ -34,7 +34,7 @@
             } */
             @media only screen and (max-width: 1024px) {
                 .mobile-ver {
-                    display: inline-block;
+                    display: block;
                 }
                 .desktop {
                     display: none;
