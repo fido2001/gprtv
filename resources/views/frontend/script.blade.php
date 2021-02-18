@@ -41,7 +41,7 @@
             poster: 'https://www.gprtv.id/frontend/img/logo-gpr.png',
             mimeType: "application/x-mpegURL",
             mute: false,
-            autoPlay: false,
+            autoPlay: true,
             parent: '#player-container',
             width: '100%',
             height: '100%'
@@ -168,3 +168,4 @@
                 });
             });
         </script>
+        @stack('after-js')

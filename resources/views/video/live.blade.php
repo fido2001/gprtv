@@ -12,11 +12,11 @@
                                 <div class="col-lg-12 col-md-12">
                                     <div class="video-items-active">
                                         <div class="video-items text-center">
-                                                <div class="responsive">
-                                                    <div class="embed-responsive embed-responsive-16by9">
-                                                        <div id="player-container" class="embed-responsive-item"></div>
-                                                    </div>
+                                            <div class="responsive">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <div id="player-container" class="embed-responsive-item"></div>
                                                 </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -55,3 +55,11 @@
     </div>
 </section>
 @endsection
+
+@push('after-js')
+<script>
+setTimeout(function() {
+    location.reload();
+}, 1800000);
+</script>
+@endpush
