@@ -248,11 +248,11 @@ a:hover,
     text-decoration: none
 }
 
-a,
+/* a,
 button {
     color: #fff;
     outline: medium none
-}
+} */
 
 button:focus,
 input:focus,
@@ -607,7 +607,7 @@ hr {
     -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
     animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
     -webkit-box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
-    background: #fff
+    background: #ff7530;
 }
 
 .header-flex.sticky-flex {
@@ -2554,7 +2554,6 @@ hr {
 }
 
 .header-area .header-mid {
-    padding: 9px 0px;
     background: #fff;
     position: relative
 }
@@ -2576,7 +2575,6 @@ hr {
 }
 
 .header-area .header-bottom {
-    border-top: 1px solid #eee;
     box-shadow: 0px 0px 36px 0px rgba(0, 0, 0, 0.1)
 }
 
@@ -2667,9 +2665,9 @@ hr {
 .main-header .main-menu ul li a {
     color: #002e5b;
     font-weight: 500;
-    padding: 39px 19px;
+    padding: 25px 19px;
     display: block;
-    font-size: 14px;
+    font-size: 16px;
     -webkit-transition: all .3s ease-out 0s;
     -moz-transition: all .3s ease-out 0s;
     -ms-transition: all .3s ease-out 0s;
@@ -2680,7 +2678,7 @@ hr {
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .main-header .main-menu ul li a {
-        padding: 39px 15px
+        padding: 25px 15px
     }
 }
 
@@ -2761,7 +2759,21 @@ hr {
 }
 
 .header-sticky.sticky-bar.sticky .main-menu ul>li>a {
-    padding: 33px 15px
+    padding: 33px 15px;
+    color: white;
+}
+
+.header-sticky.sticky-bar.sticky .main-menu ul>li>a:hover {
+    color: #002e5b;
+}
+
+.header-sticky.sticky-bar.sticky .main-menu ul ul.submenu>li>a {
+    color: #002e5b;
+}
+
+.header-sticky.sticky-bar.sticky .main-menu ul ul.submenu>li>a:hover {
+    color: #fc3f00;
+    background: none
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2782,7 +2794,7 @@ hr {
 }
 
 .slicknav_menu .slicknav_icon-bar {
-    background-color: #fc3f00 !important
+    background-color: #002e5b !important
 }
 
 .slicknav_nav {
@@ -3744,7 +3756,7 @@ hr {
 }
 
 .footer-area .footer-tittle p {
-    color: #a8a8a8
+    color: #fff
 }
 
 .footer-area .footer-tittle ul li {
@@ -3753,7 +3765,7 @@ hr {
 }
 
 .footer-area .footer-tittle ul li a {
-    color: #333333;
+    color: #fff;
     font-weight: 300
 }
 
@@ -3795,7 +3807,7 @@ hr {
 }
 
 .footer-area .footer-social a i {
-    color: #222222;
+    color: #afafaf;
     margin-right: 12px;
     font-size: 19px;
     -webkit-transition: all .4s ease-out 0s;
@@ -3836,12 +3848,12 @@ hr {
 
 .footer-bottom-area .footer-border {
     border-top: 1px solid #242323;
-    padding: 40px 0px 23px
+    /* padding: 3px 0px 0px */
 }
 
 @media (max-width: 767px) {
     .footer-bottom-area .footer-border {
-        padding: 35px 0px 20px
+        padding: 15px 0px 20px
     }
 }
 
@@ -5897,7 +5909,7 @@ del {
 }
 
 .progress-table-wrap {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .progress-table {

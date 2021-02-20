@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/slick.css">
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/nice-select.css">
         <link rel="stylesheet" href="{{ URL('/frontend') }}/css/style.css">
+        <link href="https://vjs.zencdn.net/7.2.3/video-js.css" rel="stylesheet">
 
         <style>
             .video {
@@ -29,9 +30,35 @@
                 display: flex;
                 justify-content: center;
             }
-            /* #list-selasa, #list-rabu, #list-kamis, #list-jumat, #list-sabtu, #list-minggu {
-                display: none;
-            } */
+
+            .trend-top-cap small a{
+                color:#fff
+            }
+
+            .trend-top-cap h2:hover{
+                color: #fc3f00
+            }
+
+            .footer-area {
+                background-image: url("/frontend/img/footerbg.jpg"); background-repeat: no-repeat; background-size: cover
+            }
+
+            .footer-bottom-area {
+                background-color: #fff
+            }
+
+            small a:hover{
+                color:#fc3f00
+            }
+
+            .list-inline-item button {
+                border: 0; background: none; color:#999; cursor: pointer;
+            }
+            
+            .list-inline-item button:hover {
+                border: 0; background: none; color:#fc3f00
+            }
+            
             @media only screen and (max-width: 1024px) {
                 .mobile-ver {
                     display: inline-block;
@@ -49,34 +76,22 @@
                 }
             }
 
-            .gradient-text {
-                /* Fallback: Set a background color. */
-                background-color: #CA4246;
-                
-                /* Create the gradient. */
-                background-image: linear-gradient(
-                        45deg,
-                        #CA4246 16.666%, 
-                        #E16541 16.666%, 
-                        #E16541 33.333%, 
-                        #F18F43 33.333%, 
-                        #F18F43 50%,
-                        #476098 66.666%, 
-                        #476098 83.333%, 
-                        #A7489B 83.333%);
-                
-                /* Set the background size and repeat properties. */
-                background-size: 100%;
-                background-repeat: repeat;
-
-                /* Use the text as a mask for the background. */
-                /* This will show the gradient as a text color rather than element bg. */
+            .rainbow_text_animated {
+                background: linear-gradient(90deg, #065ba5, #d630f2, #ff002f, #e4ff00, #d630f2, #065ba5);
                 -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; 
-                
-                /* Animate the text when loading the element. */
-                    /* This animates it on page load and when hovering out. */
-                    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+                -webkit-text-fill-color: transparent;
+                background-size: 400% 100%;
+                animation: color-change 5s infinite;
+            }
+
+            @keyframes color-change {
+                0%,100% {
+                    background-position: 0 0;
+                }
+
+                50% {
+                    background-position: 100% 0;
+                }
             }
         </style>
 </head>

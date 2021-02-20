@@ -25,14 +25,6 @@
             <div class="recent-articles">
                 <div class="container">
                     <div class="recent-wrapper">
-                        <!-- section Tittle -->
-                        {{-- <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section-tittle mb-30">
-                                    <h3>Berita Terbaru</h3>
-                                </div>
-                            </div>
-                        </div> --}}
                         <div class="row">
                             <div class="col-12">
                                 <div class="recent-active dot-style d-flex dot-style">
@@ -42,12 +34,13 @@
                                             @if ($berita->cover != null)
                                             <img src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">
                                             @else
-                                            <img src="{{ $berita->thumbnail }}" alt="">
+                                            <a href="{{ route('show.video', $berita->slug) }}"><img src="{{ $berita->thumbnail }}" alt="" title="{{ $berita->title }}"></a>
                                             @endif
                                         </div>
                                         <div class="what-cap">
                                             {{-- <span class="color3">{{ $berita->category->name }}</span> --}}
-                                            <h4><a href="{{ route('show.video', $berita->slug) }}">{{ Str::limit($berita->title, 55) }}</a></h4>
+                                            <small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
+                                            <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 55) }}</a></h4>
                                         </div>
                                     </div>
                                     @endforeach
@@ -71,13 +64,14 @@
                         <div class="trend-top-img">
                             @foreach ($videoTerbaru as $video)
                             @if ($video->cover != null)
-                            <img src="{{ URL('../storage/'.$video->thumbnail)}}" alt="">
+                            <a href="{{ route('show.video', $video->slug) }}"><img src="{{ URL('../storage/'.$video->thumbnail)}}" alt=""></a>
                             @elseif ($video->cover == null)
-                            <img src="{{ $video->thumbnail }}" alt="">
+                            <a href="{{ route('show.video', $video->slug) }}"><img src="{{ $video->thumbnail }}" alt="" title="{{ $video->title }}"></a>
                             @endif
                             <div class="trend-top-cap">
-                                <span><a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span>
-                                <h2><a href="{{ route('show.video', $video->slug) }}">{{ $video->title }}</a></h2>
+                                <span><a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span><br>
+                                <small><a href="{{ route('show.instansi', $video->instansi->slug) }}">{{ $video->instansi->name }}</a></small>
+                                <h2><a href="{{ route('show.video', $video->slug) }}" title="{{ $video->title }}">{{ $video->title }}</a></h2>
                             </div>
                             @endforeach
                         </div>
@@ -90,18 +84,23 @@
                                 <div class="single-bottom mb-35">
                                     <div class="trend-bottom-img mb-30">
                                         @if ($video->cover != null)
-                                        <img src="{{ URL('../storage/'.$video->thumbnail)}}" alt="">
+                                        <a href="{{ route('show.video', $video->slug) }}"><img src="{{ URL('../storage/'.$video->thumbnail)}}" alt=""></a>
                                         @elseif ($video->cover == null)
-                                        <img src="{{ $video->thumbnail }}" alt="">
+                                        <a href="{{ route('show.video', $video->slug) }}"><img src="{{ $video->thumbnail }}" alt=""></a>
                                         @endif
                                     </div>
                                     <div class="trend-bottom-cap">
-                                        @if ( $video->category_id == '1') 
+                                        @if ($video->category_id == '1') 
                                         <span class="color1">
-                                        @else
+                                        @elseif ($video->category_id == '8')
+                                        <span class="color3">
+                                        @elseif ($video->category_id == '3')
                                         <span class="color2">
+                                        @else
+                                        <span class="color4">
                                         @endif
-                                        <a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span>
+                                        <a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span><br>
+                                        <small><a href="{{ route('show.instansi', $video->instansi->slug) }}">{{ $video->instansi->name }}</a></small>
                                         <h4><a href="{{ route('show.video', $video->slug) }}">{{ $video->title }}</a></h4>
                                     </div>
                                 </div>
@@ -255,10 +254,9 @@
 </div>
 <!-- Trending Area End -->
 <!--   Weekly-News start -->
-<div class="weekly-news-area pt-50">
+{{-- <div class="weekly-news-area pt-50">
     <div class="container">
         <div class="weekly-wrapper">
-            <!-- section Tittle -->
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-tittle mb-30">
@@ -279,436 +277,148 @@
                                 @endif
                             </div>
                             <div class="weekly-caption">
-                                {{-- <span class="color1">Strike</span> --}}
                                 <h4><a href="{{ route('show.video', $film->slug) }}">{{ $film->title }}</a></h4>
                             </div>
                         </div>
                         @endforeach
-                        {{-- <div class="weekly-single">
-                            <div class="weekly-img">
-                                    <img style="width: 250px; height: 400px" src="{{ URL('/frontend/img/news/weeklyNews3.jpg') }}" alt="">
-                            </div>
-                            <div class="weekly-caption">
-                                <span class="color1">Strike</span>
-                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                            </div>
-                        </div>
-                        <div class="weekly-single">
-                            <div class="weekly-img">
-                                <img style="width: 250px; height: 400px" src="{{ URL('/frontend/img/news/weeklyNews1.jpg') }}" alt="">
-                            </div>
-                            <div class="weekly-caption">
-                                <span class="color1">Strike</span>
-                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>           
-<!-- End Weekly-News -->
-<!-- Whats New Start -->
-{{-- <section class="whats-news-area pt-50 pb-20">
+</div>   --}}
+<section class="blog_area single_post_area" id="live">
     <div class="container">
         <div class="row">
-        <div class="col-lg-8">
-            <div class="row d-flex justify-content-between">
-                <div class="col-lg-3 col-md-3">
-                    <div class="section-tittle mb-30">
-                        <h3>Whats New</h3>
+            <div class="col-lg-8 posts-list">
+                <div class="single-post">
+                    <div class="youtube-area pt-5">
+                        <div class="container">
+                            <h3>Live Streaming GPR TV</h3>
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <div class="video-items-active">
+                                        <div class="video-items text-center">
+                                            {{-- <div class="responsive">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <div id="player-container2" class="embed-responsive-item"></div>
+                                                </div>
+                                            </div> --}}
+                                            <div id='player' class="responsive">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <video id='hls-example'  class="video-js vjs-default-skin embed-responsive-item" width="100%" height="100%" autoplay controls>
+                                                        <source type="application/x-mpegURL" src="https://h1.intechmedia.net/intech/ch66.m3u8">
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-9">
-                    <div class="properties__button">
-                        <!--Nav Button  -->                                            
-                        <nav>                                                                     
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Lifestyle</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Travel</a>
-                                <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Fashion</a>
-                                <a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
-                                <a class="nav-item nav-link" id="nav-technology" data-toggle="tab" href="#nav-techno" role="tab" aria-controls="nav-contact" aria-selected="false">Technology</a>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget post_category_widget" style="padding: 0px 10px; margin-top:50px">
+                        <h4 class="widget_title" style="margin-bottom: 0px">Sedang Tayang :</h4>
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 310px">
+                                <div class="table-head">
+                                    <div class="country" style="width: 40%">Pukul</div>
+                                    <div class="visit" style="width: 60%">Program Acara</div>
+                                </div>
+                                @foreach ($jadwalTayang as $tayang)
+                                <div class="table-row">
+                                    <div class="country" style="width: 40%">{{ $tayang->mulai }} - {{ $tayang->selesai }}</div>
+                                    <div class="visit" style="width: 60%">{{ $tayang->acara }}</div>
+                                </div>
+                                @endforeach
                             </div>
-                        </nav>
-                        <!--End Nav Button  -->
+                        </div>
+                        <div>
+                            <h6 align="justify" style="color:#635c5c">GPR TV juga bisa disaksikan melalui kanal:</h6>
+                            <h6 align="justify" style="color:#635c5c">1. C Band Telkom 4 Frekuensi 3766 SB 21818 Pol H.</h6>
+                            <h6 align="justify" style="color:#635c5c">2. Ku Band Ses-9 Frekuensi 11861 SB 45000 Pol H.</h6>
+                        </div>
+                        <div class="navigation-top mt-3">
+                            <div class="d-sm-flex">
+                                <h4 class="like-info mr-3" style="color:#635c5c">Bagikan:</h4>
+                                {{-- <div class="col-sm-4 text-center my-2 my-sm-0"> --}}
+                                    <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                                {{-- </div> --}}
+                                <span>
+                                    <ul class="social-icons list-inline">
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="WhatsApp" rel="noopener" alt="Whatsapp" href="https://api.whatsapp.com/send?text=Live Streaming GPR TV https://www.gprtv.id/live" onclick="return !window.open(this.href, 'Whatsapp Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank"><i style="font-size: 27px;" class="fab fa-whatsapp"></i>
+                                        </a></li>
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="Facebook" rel="noopener" alt="Facebook" href="https://www.facebook.com/dialog/share?app_id=734827236923234&amp;display=popup&amp;href=https%3A%2F%2Fwww.gprtv.id%2Flive" onclick="return !window.open(this.href, 'Facebook Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                                        <i style="font-size: 27px;" class="fab fa-facebook-f"></i>
+                                        </a></li>
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="Twitter" rel="noopener" alt="Twitter" href="https://twitter.com/intent/tweet?text=Live Streaming GPR TV https://www.gprtv.id/live" onclick="return !window.open(this.href, 'Twitter Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                                        <i style="font-size: 27px;" class="fab fa-twitter"></i>
+                                        </a></li>
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="line" rel="noopener" alt="Line" href="https://lineit.line.me/share/ui?url=https://www.gprtv.id/live&amp;text=Live Streaming GPR TV" onclick="return !window.open(this.href, 'Line Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                                        <i style="font-size: 27px;" class="fab fa-line"></i>
+                                    </a></li>
+                                </ul>
+                            </span>
+                        </div>
+                            <h5 style="color:#635c5c" class="mt-3">Salin Link:</h5>
+                            <span>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <input type="text" class="form-control" value="https://www.gprtv.id/#live" id="myInput" readonly>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <button onclick="myFunction()"><i style="font-size: 25px" class="fas fa-copy"></i></button>
+                                    </li>
+                                </ul>
+                            </span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="recent-articles" style="margin-top: 75px">
+    <div class="container">
+        <div class="recent-wrapper">
+            <!-- section Tittle -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle mb-30">
+                        <h3>Film Pendek Terbaru</h3>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <!-- Nav Card -->
-                    <div class="tab-content" id="nav-tabContent">
-                        <!-- card one -->
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">           
-                            <div class="whats-news-caption">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews1.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews2.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews3.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews4.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="recent-active dot-style d-flex dot-style">
+                        @foreach ($filmPendek as $film)
+                        <div class="single-recent mb-100">
+                            <div class="what-img">
+                                @if ($film->cover != null)
+                                <img src="{{ URL('../storage/'.$film->thumbnail)}}" alt="">
+                                @else
+                                <img src="{{ $film->thumbnail }}" alt="">
+                                @endif
+                            </div>
+                            <div class="what-cap">
+                                {{-- <span class="color3">{{ $film->category->name }}</span> --}}
+                                <small><a href="{{ route('show.instansi', $film->instansi->slug) }}">{{ $film->instansi->name }}</a></small>
+                                <h4><a href="{{ route('show.video', $film->slug) }}">{{ Str::limit($film->title, 55) }}</a></h4>
                             </div>
                         </div>
-                        <!-- Card two -->
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                            <div class="whats-news-caption">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews1.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews2.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews3.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews4.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Card three -->
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                            <div class="whats-news-caption">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews1.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews2.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews3.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews4.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- card fure -->
-                        <div class="tab-pane fade" id="nav-last" role="tabpanel" aria-labelledby="nav-last-tab">
-                            <div class="whats-news-caption">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews1.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews2.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews3.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews4.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- card Five -->
-                        <div class="tab-pane fade" id="nav-nav-Sport" role="tabpanel" aria-labelledby="nav-Sports">
-                            <div class="whats-news-caption">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews1.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews2.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews3.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews4.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- card Six -->
-                        <div class="tab-pane fade" id="nav-techno" role="tabpanel" aria-labelledby="nav-technology">
-                            <div class="whats-news-caption">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews1.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews2.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div> 
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews3.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="single-what-news mb-100">
-                                            <div class="what-img">
-                                                <img src="assets/img/news/whatNews4.jpg" alt="">
-                                            </div>
-                                            <div class="what-cap">
-                                                <span class="color1">Night party</span>
-                                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <!-- End Nav Card -->
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <!-- Section Tittle -->
-            <div class="section-tittle mb-40">
-                <h3>Follow Us</h3>
-            </div>
-            <!-- Flow Socail -->
-            <div class="single-follow mb-45">
-                <div class="single-box">
-                    <div class="follow-us d-flex align-items-center">
-                        <div class="follow-social">
-                            <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
-                        </div>
-                        <div class="follow-count">  
-                            <span>8,045</span>
-                            <p>Fans</p>
-                        </div>
-                    </div> 
-                    <div class="follow-us d-flex align-items-center">
-                        <div class="follow-social">
-                            <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
-                        </div>
-                        <div class="follow-count">
-                            <span>8,045</span>
-                            <p>Fans</p>
-                        </div>
-                    </div>
-                        <div class="follow-us d-flex align-items-center">
-                        <div class="follow-social">
-                            <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
-                        </div>
-                        <div class="follow-count">
-                            <span>8,045</span>
-                            <p>Fans</p>
-                        </div>
-                    </div>
-                    <div class="follow-us d-flex align-items-center">
-                        <div class="follow-social">
-                            <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
-                        </div>
-                        <div class="follow-count">
-                            <span>8,045</span>
-                            <p>Fans</p>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-            <!-- New Poster -->
-            <div class="news-poster d-none d-lg-block">
-                <img src="assets/img/news/news_card.jpg" alt="">
-            </div>
-        </div>
         </div>
     </div>
-</section> --}}
-<!-- Whats New End -->
-<!--   Weekly2-News start -->
-<div class="weekly2-news-area  weekly2-pading gray-bg">
+</div>
+<div class="weekly2-news-area gray-bg">
     <div class="container">
         <div class="weekly2-wrapper">
             <!-- section Tittle -->
@@ -743,62 +453,17 @@
             </div>
         </div>
     </div>
-</div>           
-<!-- End Weekly-News -->
-<!-- Start Youtube -->
-<div class="youtube-area video-padding">
-    <div class="container">
-        <div class="row">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-tittle mb-30">
-                        <h3>Drama terbaru</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="video-items-active">
-                    @foreach ($videoDrama as $drama)
-                    <div class="video-items text-center">
-                        <iframe src="{{ $drama->link_file }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="video-info">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="video-caption">
-                        @foreach ($dramaCaption as $drama)
-                        <div class="top-caption">
-                            <span class="color1">{{ $drama->category->name }}</span>
-                        </div>
-                        <div class="bottom-caption">
-                            <h2>{{ $drama->title }}</h2>
-                            <p>{!! $drama->body !!}</p>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="testmonial-nav text-center">
-                        @foreach ($videoDrama as $drama)
-                        <div class="single-video">
-                            <iframe  src="{{ $drama->link_youtube }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <div class="video-intro">
-                                <h4>{{ $drama->title }}</h4>
-                            </div>
-                        </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> 
-<!-- End Start youtube -->
-<!--  Recent Articles start -->
-     
-<!--Recent Articles End -->
+</div>
 @endsection
+
+@push('after-js')
+<script>
+    function myFunction() {
+    var copyText = document.getElementById("myInput");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("URL Berhasil disalin");
+}
+</script>
+@endpush

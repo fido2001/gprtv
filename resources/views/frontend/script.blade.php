@@ -34,23 +34,37 @@
         
         <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+        
+        <script src="https://vjs.zencdn.net/ie8/ie8-version/videojs-ie8.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.14.1/videojs-contrib-hls.js"></script>
+        <script src="https://vjs.zencdn.net/7.2.3/video.js"></script>
 
         <script>
+            var player = videojs('hls-example');
+            player.play();
+        </script>
+
+        <script>
+            $(document).on('show.visibility', function() {
+                $('#hls-example').get(0).play();
+            });
+            $(document).on('hide.visibility', function() {
+                $('#hls-example').get(0).pause();
+            });
+        </script>
+        
+        <script>
             new Clappr.Player({
+            parent: '#player-container',
             source: "https://h1.intechmedia.net/intech/ch66.m3u8",
             poster: 'https://www.gprtv.id/frontend/img/logo-gpr.png',
             mimeType: "application/x-mpegURL",
             mute: false,
             autoPlay: false,
-            parent: '#player-container',
             width: '100%',
-            height: '100%'
+            height: '100%',
+            visibilityEnableIcon: true
             });
-
-            // $( document ).ready(function() {
-            //     $('.days').hide();
-            //     $('#list-senin').show();
-            // });
 
             $('li').click(function(){    
                 if(this.id == 'hari-senin'){

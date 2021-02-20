@@ -32,6 +32,7 @@ class FrontendController extends Controller
             'jadwalJumat' => Jadwal::where('hari', 'Jumat')->get(),
             'jadwalSabtu' => Jadwal::where('hari', 'Sabtu')->get(),
             'jadwalMinggu' => Jadwal::where('hari', 'Minggu')->get(),
+            'jadwalTayang' => Tayang::get(),
             'dataHeadline' => Headline::get()
         ]);
     }
