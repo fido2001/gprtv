@@ -20,7 +20,7 @@ class FrontendController extends Controller
             'videoTerbaruBawah' => Video::where('category_id', '4')->latest()->take(3)->get(),
             'videoTerbaruKanan' => Video::where('category_id', '1')->latest()->take(5)->get(),
             'filmPendek' => Video::where('category_id', '7')->latest()->take(4)->get(),
-            'videoKominfo' => Video::where('instansi_id', '2')->latest()->take(5)->get(),
+            'videoKominfo' => Video::where('instansi_id', '2')->where('category_id', '8')->orWhere('category_id', '11')->latest()->take(5)->get(),
             'videoDrama' => Video::where('category_id', '6')->latest()->take(5)->get(),
             'dramaCaption' => Video::where('category_id', '6')->latest()->take(1)->get(),
             'videoBerita' => Video::where('category_id', '8')->latest()->take(5)->get(),
