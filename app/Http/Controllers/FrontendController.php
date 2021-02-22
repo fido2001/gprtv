@@ -16,8 +16,8 @@ class FrontendController extends Controller
     public function home()
     {
         return view('frontend.home', [
-            'videoTerbaru' => Video::latest()->take(1)->get(),
-            'videoTerbaruBawah' => Video::latest()->take(3)->get(),
+            'videoTerbaru' => Video::where('category_id', '4')->latest()->take(1)->get(),
+            'videoTerbaruBawah' => Video::where('category_id', '4')->latest()->take(3)->get(),
             'videoTerbaruKanan' => Video::where('category_id', '1')->latest()->take(5)->get(),
             'filmPendek' => Video::where('category_id', '7')->latest()->take(4)->get(),
             'videoKominfo' => Video::where('instansi_id', '2')->latest()->take(5)->get(),

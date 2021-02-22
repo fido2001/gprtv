@@ -2,61 +2,187 @@
 
 @section('content')
 <!-- Trending Area Start -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <span class="trending-tittle" style="padding-bottom: 1px">
+                <strong>Berita Terbaru</strong>
+                <div class="desktop">
+                    <div class="trending-animated">
+                        <ul id="js-news" class="js-hidden">
+                            @foreach ($dataHeadline as $headline)
+                            <li class="news-item">{{ $headline->tulisan }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="recent-articles">
+    <div class="container">
+        <div class="recent-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="recent-active dot-style d-flex dot-style">
+                        @foreach ($videoBerita as $berita)
+                        <div class="single-recent mb-100">
+                            <div class="what-img" style="margin-bottom: 40px">
+                                @if ($berita->cover != null)
+                                <img src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">
+                                @else
+                                <a href="{{ route('show.video', $berita->slug) }}"><img src="{{ $berita->thumbnail }}" alt="" title="{{ $berita->title }}"></a>
+                                @endif
+                            </div>
+                            <div class="what-cap">
+                                <small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
+                                <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 55) }}</a></h4>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="mobile-ver">
+                    <marquee behavior="scroll" direction="left">
+                        @foreach ($dataHeadline as $headline)
+                            {{ $headline->tulisan }} |
+                        @endforeach
+                    </marquee>    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- <div class="weekly2-news-area white-bg">
+    <div class="container">
+        <div class="weekly2-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <div class="weekly2-news-active dot-style d-flex">
+                        @foreach ($videoBerita as $berita)
+                        <div class="weekly2-single">
+                            <div class="weekly2-img">
+                                @if ($berita->cover != null)
+                                <img style="height: 180px" src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">    
+                                @else
+                                <a href="{{ route('show.video', $berita->title) }}" title="{{ $berita->title }}"><img style="height: 180px" src="{{ $berita->thumbnail }}" alt=""></a>
+                                @endif
+                            </div>
+                            <div class="weekly2-caption">
+                                <span class="color1"><a style="color: black" href="{{ route('show.category', $berita->category->slug) }}">{{ $berita->category->name }}</a></span>
+                                <br><br><small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
+                                <p>{{ Carbon\Carbon::parse($berita->created_at)->translatedFormat("d M Y") }}</p>
+                                <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 55) }}</a></h4>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> --}}
+<section class="blog_area single_post_area mb-5" id="live">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post">
+                    <div class="youtube-area pt-3">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12">
+                                    <h4>Live Streaming GPR TV</h4>
+                                    <div class="video-items-active">
+                                        <div class="video-items text-center">
+                                            {{-- <div class="responsive">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <div id="player-container2" class="embed-responsive-item"></div>
+                                                </div>
+                                            </div> --}}
+                                            <div id='player' class="responsive">
+                                                <div class="embed-responsive embed-responsive-16by9">
+                                                    <video id='hls-example'  class="video-js vjs-default-skin embed-responsive-item" width="100%" height="100%" autoplay controls>
+                                                        <source type="application/x-mpegURL" src="https://h1.intechmedia.net/intech/ch66.m3u8">
+                                                    </video>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget post_category_widget" style="padding: 0px 10px; margin-top:20px">
+                        <h4 class="widget_title" style="margin-bottom: 0px">Sedang Tayang :</h4>
+                        <div class="progress-table-wrap">
+                            <div class="progress-table" style="min-width: 310px">
+                                <div class="table-head">
+                                    <div class="country" style="width: 40%">Pukul</div>
+                                    <div class="visit" style="width: 60%">Program Acara</div>
+                                </div>
+                                @foreach ($jadwalTayang as $tayang)
+                                <div class="table-row">
+                                    <div class="country" style="width: 40%">{{ $tayang->mulai }} - {{ $tayang->selesai }}</div>
+                                    <div class="visit" style="width: 60%">{{ $tayang->acara }}</div>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <div>
+                            <h6 align="justify" style="color:#635c5c">GPR TV juga bisa disaksikan melalui kanal:</h6>
+                            <h6 align="justify" style="color:#635c5c">1. C Band Telkom 4 Frekuensi 3766 SB 21818 Pol H.</h6>
+                            <h6 align="justify" style="color:#635c5c">2. Ku Band Ses-9 Frekuensi 11861 SB 45000 Pol H.</h6>
+                        </div>
+                        <div class="navigation-top mt-3">
+                            <div class="d-sm-flex">
+                                <h4 class="like-info mr-3" style="color:#635c5c">Bagikan:</h4>
+                                {{-- <div class="col-sm-4 text-center my-2 my-sm-0"> --}}
+                                    <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                                {{-- </div> --}}
+                                <span>
+                                    <ul class="social-icons list-inline">
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="WhatsApp" rel="noopener" alt="Whatsapp" href="https://api.whatsapp.com/send?text=Live Streaming GPR TV https://www.gprtv.id/live" onclick="return !window.open(this.href, 'Whatsapp Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank"><i style="font-size: 27px;" class="fab fa-whatsapp"></i>
+                                        </a></li>
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="Facebook" rel="noopener" alt="Facebook" href="https://www.facebook.com/dialog/share?app_id=734827236923234&amp;display=popup&amp;href=https%3A%2F%2Fwww.gprtv.id%2Flive" onclick="return !window.open(this.href, 'Facebook Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                                        <i style="font-size: 27px;" class="fab fa-facebook-f"></i>
+                                        </a></li>
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="Twitter" rel="noopener" alt="Twitter" href="https://twitter.com/intent/tweet?text=Live Streaming GPR TV https://www.gprtv.id/live" onclick="return !window.open(this.href, 'Twitter Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                                        <i style="font-size: 27px;" class="fab fa-twitter"></i>
+                                        </a></li>
+                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="line" rel="noopener" alt="Line" href="https://lineit.line.me/share/ui?url=https://www.gprtv.id/live&amp;text=Live Streaming GPR TV" onclick="return !window.open(this.href, 'Line Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                                        <i style="font-size: 27px;" class="fab fa-line"></i>
+                                    </a></li>
+                                </ul>
+                            </span>
+                        </div>
+                            <h5 style="color:#635c5c" class="mt-3">Salin Link:</h5>
+                            <span>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <input type="text" class="form-control" value="https://www.gprtv.id/#live" id="myInput" readonly>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <button onclick="myFunction()"><i style="font-size: 25px" class="fas fa-copy"></i></button>
+                                    </li>
+                                </ul>
+                            </span>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div><hr>
+    </div>
+</section>
 <div class="trending-area fix">
     <div class="container">
         <div class="trending-main">
             <!-- Trending Tittle -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <span class="trending-tittle" style="padding-bottom: 1px">
-                        <strong>Berita Terbaru</strong>
-                        <div class="desktop">
-                            <div class="trending-animated">
-                                <ul id="js-news" class="js-hidden">
-                                    @foreach ($dataHeadline as $headline)
-                                    <li class="news-item">{{ $headline->tulisan }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="recent-articles">
-                <div class="container">
-                    <div class="recent-wrapper">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="recent-active dot-style d-flex dot-style">
-                                    @foreach ($videoBerita as $berita)
-                                    <div class="single-recent mb-100">
-                                        <div class="what-img">
-                                            @if ($berita->cover != null)
-                                            <img src="{{ URL('../storage/'.$berita->thumbnail)}}" alt="">
-                                            @else
-                                            <a href="{{ route('show.video', $berita->slug) }}"><img src="{{ $berita->thumbnail }}" alt="" title="{{ $berita->title }}"></a>
-                                            @endif
-                                        </div>
-                                        <div class="what-cap">
-                                            {{-- <span class="color3">{{ $berita->category->name }}</span> --}}
-                                            <small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
-                                            <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 55) }}</a></h4>
-                                        </div>
-                                    </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="mobile-ver">
-                                <marquee behavior="scroll" direction="left">
-                                    @foreach ($dataHeadline as $headline)
-                                        {{ $headline->tulisan }} |
-                                    @endforeach
-                                </marquee>    
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>      
             <div class="row">
                 <div class="col-lg-8">
                     <!-- Trending Top -->
@@ -287,102 +413,7 @@
         </div>
     </div>
 </div>   --}}
-<section class="blog_area single_post_area" id="live">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 posts-list">
-                <div class="single-post">
-                    <div class="youtube-area pt-5">
-                        <div class="container">
-                            <h3>Live Streaming GPR TV</h3>
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12">
-                                    <div class="video-items-active">
-                                        <div class="video-items text-center">
-                                            {{-- <div class="responsive">
-                                                <div class="embed-responsive embed-responsive-16by9">
-                                                    <div id="player-container2" class="embed-responsive-item"></div>
-                                                </div>
-                                            </div> --}}
-                                            <div id='player' class="responsive">
-                                                <div class="embed-responsive embed-responsive-16by9">
-                                                    <video id='hls-example'  class="video-js vjs-default-skin embed-responsive-item" width="100%" height="100%" autoplay controls>
-                                                        <source type="application/x-mpegURL" src="https://h1.intechmedia.net/intech/ch66.m3u8">
-                                                    </video>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog_right_sidebar">
-                    <aside class="single_sidebar_widget post_category_widget" style="padding: 0px 10px; margin-top:50px">
-                        <h4 class="widget_title" style="margin-bottom: 0px">Sedang Tayang :</h4>
-                        <div class="progress-table-wrap">
-                            <div class="progress-table" style="min-width: 310px">
-                                <div class="table-head">
-                                    <div class="country" style="width: 40%">Pukul</div>
-                                    <div class="visit" style="width: 60%">Program Acara</div>
-                                </div>
-                                @foreach ($jadwalTayang as $tayang)
-                                <div class="table-row">
-                                    <div class="country" style="width: 40%">{{ $tayang->mulai }} - {{ $tayang->selesai }}</div>
-                                    <div class="visit" style="width: 60%">{{ $tayang->acara }}</div>
-                                </div>
-                                @endforeach
-                            </div>
-                        </div>
-                        <div>
-                            <h6 align="justify" style="color:#635c5c">GPR TV juga bisa disaksikan melalui kanal:</h6>
-                            <h6 align="justify" style="color:#635c5c">1. C Band Telkom 4 Frekuensi 3766 SB 21818 Pol H.</h6>
-                            <h6 align="justify" style="color:#635c5c">2. Ku Band Ses-9 Frekuensi 11861 SB 45000 Pol H.</h6>
-                        </div>
-                        <div class="navigation-top mt-3">
-                            <div class="d-sm-flex">
-                                <h4 class="like-info mr-3" style="color:#635c5c">Bagikan:</h4>
-                                {{-- <div class="col-sm-4 text-center my-2 my-sm-0"> --}}
-                                    <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
-                                {{-- </div> --}}
-                                <span>
-                                    <ul class="social-icons list-inline">
-                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="WhatsApp" rel="noopener" alt="Whatsapp" href="https://api.whatsapp.com/send?text=Live Streaming GPR TV https://www.gprtv.id/live" onclick="return !window.open(this.href, 'Whatsapp Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank"><i style="font-size: 27px;" class="fab fa-whatsapp"></i>
-                                        </a></li>
-                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="Facebook" rel="noopener" alt="Facebook" href="https://www.facebook.com/dialog/share?app_id=734827236923234&amp;display=popup&amp;href=https%3A%2F%2Fwww.gprtv.id%2Flive" onclick="return !window.open(this.href, 'Facebook Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
-                                        <i style="font-size: 27px;" class="fab fa-facebook-f"></i>
-                                        </a></li>
-                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="Twitter" rel="noopener" alt="Twitter" href="https://twitter.com/intent/tweet?text=Live Streaming GPR TV https://www.gprtv.id/live" onclick="return !window.open(this.href, 'Twitter Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
-                                        <i style="font-size: 27px;" class="fab fa-twitter"></i>
-                                        </a></li>
-                                        <li class="list-inline-item" style="margin-right: .6em"><a aria-label="line" rel="noopener" alt="Line" href="https://lineit.line.me/share/ui?url=https://www.gprtv.id/live&amp;text=Live Streaming GPR TV" onclick="return !window.open(this.href, 'Line Share', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
-                                        <i style="font-size: 27px;" class="fab fa-line"></i>
-                                    </a></li>
-                                </ul>
-                            </span>
-                        </div>
-                            <h5 style="color:#635c5c" class="mt-3">Salin Link:</h5>
-                            <span>
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <input type="text" class="form-control" value="https://www.gprtv.id/#live" id="myInput" readonly>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button onclick="myFunction()"><i style="font-size: 25px" class="fas fa-copy"></i></button>
-                                    </li>
-                                </ul>
-                            </span>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="recent-articles" style="margin-top: 75px">
+<div class="recent-articles" style="margin-top: 25px">
     <div class="container">
         <div class="recent-wrapper">
             <!-- section Tittle -->
@@ -398,7 +429,7 @@
                     <div class="recent-active dot-style d-flex dot-style">
                         @foreach ($filmPendek as $film)
                         <div class="single-recent mb-100">
-                            <div class="what-img">
+                            <div class="what-img"  style="margin-bottom: 30px">
                                 @if ($film->cover != null)
                                 <img src="{{ URL('../storage/'.$film->thumbnail)}}" alt="">
                                 @else

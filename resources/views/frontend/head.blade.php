@@ -31,6 +31,15 @@
                 justify-content: center;
             }
 
+            a.active {
+                background-color: #ec2028;
+                color:white
+            }
+
+            li a.active:hover {
+                color: #214288
+            }
+
             .trend-top-cap small a{
                 color:#fff
             }
@@ -52,7 +61,7 @@
             }
 
             .list-inline-item button {
-                border: 0; background: none; color:#999; cursor: pointer;
+                border: 0; background: none; color:#635c5c; cursor: pointer;
             }
             
             .list-inline-item button:hover {
@@ -77,11 +86,12 @@
             }
 
             .rainbow_text_animated {
-                background: linear-gradient(90deg, #065ba5, #d630f2, #ff002f, #e4ff00, #d630f2, #065ba5);
+                background: linear-gradient(90deg, #22e7ee, #d630f2, #ff002f, #e4ff00, #d630f2, #22e7ee);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-size: 400% 100%;
                 animation: color-change 5s infinite;
+                font-weight: 500
             }
 
             @keyframes color-change {

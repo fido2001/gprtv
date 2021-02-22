@@ -1,10 +1,8 @@
 <header>
     <!-- Header Start -->
-    <div class="header-area">
+    <div class="header-area mb-3">
         <div class="main-header">
-            <div class="header-mid d-none d-md-block">
-            {{-- <div class="header-mid d-none d-md-block" style="background-color:#ff7530"> --}}
-            {{-- <div class="header-mid d-none d-md-block" style="background-color:#fc3f00"> --}}
+            <div class="header-mid d-none d-md-block mb-1">
                 <div class="container">
                     <div class="row d-flex align-items-center">
                         <!-- Logo -->
@@ -14,7 +12,7 @@
                             </div>
                         </div>
                         <div class="col-xl-9 col-lg-9 col-md-9">
-                            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000">
+                            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
                                 <div class="carousel-inner">
                                     <div class="carousel-item">
                                         <img style="width: 80%;height: 105px; margin-top:5px; margin-left:160px" class="rounded" src="{{ URL('/frontend') }}/img/raja-ampat.jpg" alt="Wonderful Indonesia" title="Raja Ampat">
@@ -40,21 +38,23 @@
                     </div>
                 </div>
             </div>
-            <div class="header-bottom header-sticky">
+            <div class="header-bottom header-sticky" style="background-color: #214288">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-xl-12 col-lg-12 col-md-12 header-flex">
                             <!-- sticky -->
                                 <div class="sticky-logo">
-                                    <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 150px; margin-top:17px" class="mb-3 rounded"></a>
+                                    <a href="index.html"><img src="{{ URL('/frontend') }}/img/logo-gpr.png" alt="" style="width: 80px; margin-top:10px; margin-bottom:10px; border:0.5pt white solid" class="rounded"></a>
                                 </div>
                             <!-- Main-menu -->
                             <div class="main-menu d-none d-md-block">
                                 <nav>                  
                                     <ul id="navigation">    
-                                        <li><a href="{{ URL('/') }}">BERANDA</a></li>
+                                        <li><a href="{{ URL('/') }}" class="@if (Request::segment(1) == '')
+                                            active @endif">BERANDA</a></li>
                                         <li><a href="{{ URL('/#live') }}" class="rainbow_text_animated">LIVE</a></li>
-                                        <li><a href="{{ route('all.video') }}">VIDEO</a>
+                                        <li><a href="{{ route('all.video') }}" class="@if (Request::segment(1) == 'videos')
+                                            active @endif">VIDEO</a>
                                             <ul class="submenu">
                                                 <li><a href="{{ route('all.video') }}">SEMUA VIDEO</a>
                                                 @foreach ($dataKategori as $kategori)
@@ -62,12 +62,14 @@
                                                 @endforeach
                                             </ul>
                                         </li>
-                                        <li><a href="{{ route('jadwal') }}">JADWAL ACARA</a></li>
-                                        <li><a href="{{ route('aboutus') }}">TENTANG KAMI</a></li>
+                                        <li><a href="{{ route('jadwal') }}" class="@if (Request::segment(1) == 'jadwalacara')
+                                            active @endif">JADWAL ACARA</a></li>
+                                        <li><a href="{{ route('aboutus') }}" class="@if (Request::segment(1) == 'tentangkami')
+                                            active @endif">TENTANG KAMI</a></li>
                                         @guest
                                         <li class="f-right"><a href="{{ route('login') }}">MASUK</a></li>
                                         @else
-                                        <li class="f-right"><a href="#">HAI, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
+                                        <li class="f-right"><a href="#">Hai, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                                             <ul class="submenu">
                                                 @if (Auth::user()->level == 'admin')
                                                 <li><a href="{{ route('admin.index') }}">Admin Dashboard</a></li>
@@ -85,7 +87,7 @@
                                             </ul>
                                         </li>
                                         @endguest
-                                        <li class="header-right-btn f-right d-none d-lg-block" style="margin-top: 25px">
+                                        <li class="header-right-btn f-right d-none d-lg-block" style="margin-top: 8px">
                                             <i class="fas fa-search special-tag" style="color:white"></i>
                                             <div class="search-box">
                                                 <form action="{{ route('search.video') }}" method="GET">
@@ -99,7 +101,7 @@
                             </div>
                         </div>
                         <!-- Mobile Menu -->
-                        <div class="col-12">
+                        <div class="col-12" style="min-height: 0px">
                             <div class="mobile_menu d-block d-md-none"></div>
                         </div>
                     </div>

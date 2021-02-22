@@ -27,7 +27,7 @@
                     <article class="blog_item">
                         <div class="blog_item_img">
                             @if ($video->cover == null)
-                            <img class="card-img rounded-0" src="{{ $video->thumbnail }}" alt="">
+                            <a href="{{ route('show.video', $video->slug) }}" title="{{ $video->title }}"><img class="card-img rounded-0" src="{{ $video->thumbnail }}" alt=""></a>
                             @else
                             <img class="card-img rounded-0" src="{{ URL('../storage/'.$video->thumbnail) }}" alt="">
                             @endif
