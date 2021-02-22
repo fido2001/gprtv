@@ -37,7 +37,7 @@
                             </div>
                             <div class="what-cap">
                                 <small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
-                                <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 55) }}</a></h4>
+                                <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 50) }}</a></h4>
                             </div>
                         </div>
                         @endforeach
