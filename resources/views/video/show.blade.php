@@ -100,7 +100,7 @@
                         </ul>
                     </aside>
                     <aside class="single_sidebar_widget popular_post_widget">
-                        <h3 class="widget_title">Video Terbaru</h3>
+                        <h3 class="widget_title">{{ ucfirst(trans($video->category->name)) }} Terbaru</h3>
                         @foreach ($videos as $video)
                         <div class="media post_item">
                             @if ($video->cover != null)

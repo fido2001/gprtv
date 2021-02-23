@@ -38,10 +38,10 @@
                         </div>
 
                         <div class="blog_details">
-                            <small><a href="{{ route('show.instansi', $video->instansi->slug) }}" style="color:#999">{{ $video->instansi->name }}</a></small><br>
-                            <a class="d-inline-block" href="{{ route('show.video', $video->slug) }}">
+                            <a class="d-block" href="{{ route('show.video', $video->slug) }}">
                                 <h2>{{ $video->title }}</h2>
                             </a>
+                            <small><a href="{{ route('show.instansi', $video->instansi->slug) }}" style="color:#999">{{ $video->instansi->name }}</a></small><br>
                             <p>{!! Str::limit(nl2br($video->body), 600) !!}</p>
                             <ul class="blog-info-link">
                                 <li>Kategori : <a href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></li>

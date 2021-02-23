@@ -36,8 +36,8 @@
                                 @endif
                             </div>
                             <div class="what-cap">
-                                <small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
                                 <h4><a href="{{ route('show.video', $berita->slug) }}" title="{{ $berita->title }}">{{ Str::limit($berita->title, 50) }}</a></h4>
+                                <small><a href="{{ route('show.instansi', $berita->instansi->slug) }}">{{ $berita->instansi->name }}</a></small>
                             </div>
                         </div>
                         @endforeach
@@ -196,8 +196,8 @@
                             @endif
                             <div class="trend-top-cap">
                                 <span><a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span><br>
-                                <small><a href="{{ route('show.instansi', $video->instansi->slug) }}">{{ $video->instansi->name }}</a></small>
                                 <h2><a href="{{ route('show.video', $video->slug) }}" title="{{ $video->title }}">{{ $video->title }}</a></h2>
+                                <small><a href="{{ route('show.instansi', $video->instansi->slug) }}">{{ $video->instansi->name }}</a></small>
                             </div>
                             @endforeach
                         </div>
@@ -226,8 +226,8 @@
                                         <span class="color4">
                                         @endif
                                         <a style="color:black" href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></span><br>
-                                        <small><a href="{{ route('show.instansi', $video->instansi->slug) }}">{{ $video->instansi->name }}</a></small>
                                         <h4><a href="{{ route('show.video', $video->slug) }}">{{ $video->title }}</a></h4>
+                                        <small><a href="{{ route('show.instansi', $video->instansi->slug) }}">{{ $video->instansi->name }}</a></small>
                                     </div>
                                 </div>
                             </div>
@@ -438,8 +438,8 @@
                             </div>
                             <div class="what-cap">
                                 {{-- <span class="color3">{{ $film->category->name }}</span> --}}
-                                <small><a href="{{ route('show.instansi', $film->instansi->slug) }}">{{ $film->instansi->name }}</a></small>
                                 <h4><a href="{{ route('show.video', $film->slug) }}">{{ Str::limit($film->title, 55) }}</a></h4>
+                                <small><a href="{{ route('show.instansi', $film->instansi->slug) }}">{{ $film->instansi->name }}</a></small>
                             </div>
                         </div>
                         @endforeach
