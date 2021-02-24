@@ -232,6 +232,33 @@
                                 </div>
                             </div>
                             @endforeach
+                            @foreach ($videoOlahragaBawah as $olahraga)
+                            <div class="col-lg-4">
+                                <div class="single-bottom mb-35">
+                                    <div class="trend-bottom-img mb-30">
+                                        @if ($olahraga->cover != null)
+                                        <a href="{{ route('show.video', $olahraga->slug) }}"><img src="{{ URL('../storage/'.$olahraga->thumbnail)}}" alt=""></a>
+                                        @elseif ($olahraga->cover == null)
+                                        <a href="{{ route('show.video', $olahraga->slug) }}" title="{{ $olahraga->title }}"><img src="{{ $olahraga->thumbnail }}" alt=""></a>
+                                        @endif
+                                    </div>
+                                    <div class="trend-bottom-cap">
+                                        @if ($olahraga->category_id == '1') 
+                                        <span class="color1">
+                                        @elseif ($olahraga->category_id == '8')
+                                        <span class="color3">
+                                        @elseif ($olahraga->category_id == '3')
+                                        <span class="color2">
+                                        @else
+                                        <span class="color4">
+                                        @endif
+                                        <a style="color:black" href="{{ route('show.category', $olahraga->category->slug) }}">{{ $olahraga->category->name }}</a></span><br>
+                                        <h4><a href="{{ route('show.video', $olahraga->slug) }}">{{ $olahraga->title }}</a></h4>
+                                        <small><a href="{{ route('show.instansi', $olahraga->instansi->slug) }}">{{ $olahraga->instansi->name }}</a></small>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>

@@ -42,7 +42,7 @@
                                 <h2>{{ $video->title }}</h2>
                             </a>
                             <small><a href="{{ route('show.instansi', $video->instansi->slug) }}" style="color:#999">{{ $video->instansi->name }}</a></small><br>
-                            <p>{!! Str::limit(nl2br($video->body), 600) !!}</p>
+                            <p>{!! Str::limit(nl2br($video->body), 300) !!}</p>
                             <ul class="blog-info-link">
                                 <li>Kategori : <a href="{{ route('show.category', $video->category->slug) }}">{{ $video->category->name }}</a></li>
                         <li>Tags : 
