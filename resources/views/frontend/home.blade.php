@@ -212,7 +212,7 @@
                                         @if ($video->cover != null)
                                         <a href="{{ route('show.video', $video->slug) }}"><img src="{{ URL('../storage/'.$video->thumbnail)}}" alt=""></a>
                                         @elseif ($video->cover == null)
-                                        <a href="{{ route('show.video', $video->slug) }}"><img src="{{ $video->thumbnail }}" alt=""></a>
+                                        <a href="{{ route('show.video', $video->slug) }}" title="{{ $video->title }}"><img src="{{ $video->thumbnail }}" alt=""></a>
                                         @endif
                                     </div>
                                     <div class="trend-bottom-cap">
@@ -433,12 +433,12 @@
                                 @if ($film->cover != null)
                                 <img src="{{ URL('../storage/'.$film->thumbnail)}}" alt="">
                                 @else
-                                <img src="{{ $film->thumbnail }}" alt="">
+                                <a href="{{ route('show.video', $film->slug) }}" title="{{ $film->title }}"><img src="{{ $film->thumbnail }}" alt="{{ $film->title }}"></a>
                                 @endif
                             </div>
                             <div class="what-cap">
                                 {{-- <span class="color3">{{ $film->category->name }}</span> --}}
-                                <h4><a href="{{ route('show.video', $film->slug) }}">{{ Str::limit($film->title, 55) }}</a></h4>
+                                <h4><a href="{{ route('show.video', $film->slug) }}" title="{{ $film->title }}">{{ Str::limit($film->title, 55) }}</a></h4>
                                 <small><a href="{{ route('show.instansi', $film->instansi->slug) }}">{{ $film->instansi->name }}</a></small>
                             </div>
                         </div>
@@ -449,7 +449,43 @@
         </div>
     </div>
 </div>
-<div class="weekly2-news-area gray-bg">
+<div class="recent-articles gray-bg" style="margin-top: 25px">
+    <div class="container">
+        <div class="recent-wrapper">
+            <!-- section Tittle -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle mb-30">
+                        <h3>Dari Kementerian Komunikasi dan Informatika RI</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="recent-active dot-style d-flex dot-style">
+                        @foreach ($videoKominfo as $kominfo)
+                        <div class="single-recent mb-100">
+                            <div class="what-img"  style="margin-bottom: 40px">
+                                @if ($kominfo->cover != null)
+                                <img src="{{ URL('../storage/'.$kominfo->thumbnail)}}" alt="">
+                                @else
+                                <a href="{{ route('show.video', $kominfo->slug) }}" title="{{ $kominfo->title }}"><img src="{{ $kominfo->thumbnail }}" alt=""></a>
+                                @endif
+                            </div>
+                            <div class="what-cap">
+                                <span class="color3">{{ $kominfo->category->name }}</span>
+                                <h4><a href="{{ route('show.video', $kominfo->slug) }}" title="{{ $kominfo->title }}">{{ Str::limit($kominfo->title, 45) }}</a></h4>
+                                {{-- <small><a href="{{ route('show.instansi', $kominfo->instansi->slug) }}">{{ $kominfo->instansi->name }}</a></small> --}}
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- <div class="weekly2-news-area gray-bg">
     <div class="container">
         <div class="weekly2-wrapper">
             <!-- section Tittle -->
@@ -484,7 +520,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
 
 @push('after-js')

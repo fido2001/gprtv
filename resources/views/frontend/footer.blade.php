@@ -1,4 +1,4 @@
-<footer class="mt-40">
+<footer>
     <!-- Footer Start-->
     <div class="footer-area fix" style="padding-top: 30px;">
         <div class="container">
