@@ -135,9 +135,9 @@
                             </div>
                         </div>
                         <div>
-                            <h6 align="justify" style="color:#635c5c">GPR TV juga bisa disaksikan melalui kanal:</h6>
-                            <h6 align="justify" style="color:#635c5c">1. C Band Telkom 4 Frekuensi 3766 SB 21818 Pol H.</h6>
-                            <h6 align="justify" style="color:#635c5c">2. Ku Band Ses-9 Frekuensi 11861 SB 45000 Pol H.</h6>
+                            <h6 align="justify" style="color:#635c5c; font-size:18px">GPR TV juga bisa disaksikan melalui kanal:</h6>
+                            <h6 align="justify" style="color:#635c5c; font-size:15px" ><span>&#183;</span> C Band Telkom 4 Frekuensi 3766 SB 21818 Pol H</h6>
+                            <h6 align="justify" style="color:#635c5c; font-size:15px" ><span>&#183;</span> Ku Band Ses-9 Frekuensi 11861 SB 45000 Pol H</h6>
                         </div>
                         <div class="navigation-top mt-3">
                             <div class="d-sm-flex">
