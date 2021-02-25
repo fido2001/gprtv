@@ -119,7 +119,7 @@
             <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget post_category_widget" style="padding: 0px 10px; margin-top:20px">
-                        <h4 class="widget_title" style="margin-bottom: 0px">Sedang Tayang :</h4>
+                        <h4 class="widget_title" style="margin-bottom: 0px">Sedang Tayang:</h4>
                         <div class="progress-table-wrap">
                             <div class="progress-table" style="min-width: 310px">
                                 <div class="table-head">
