@@ -9,6 +9,22 @@
                 <div class="col-lg-6">
                     <p style="color: #fafafa">GPRTV.id adalah Government Public Relations Televisi yang dikelola untuk menjalankan amanat Instruksi Presiden Nomor 9 tahun 2015 tentang Pengelolaan Komunikasi Publik.</p>
                 </div>
+                {{-- <div class="col-lg-2"> --}}
+                    {{-- <h4 style="color: #fafafa">Pengunjung</h4> --}}
+                    {{-- <!-- Histats.com  (div with counter) --><span id="histats_counter"></span> --}}
+                    <!-- Histats.com  START  (aync)-->
+                    {{-- <script type="text/javascript">var _Hasync= _Hasync|| [];
+                        _Hasync.push(['Histats.start', '1,4519046,4,402,118,80,00011111']);
+                        _Hasync.push(['Histats.fasi', '1']);
+                        _Hasync.push(['Histats.track_hits', '']);
+                        (function() {
+                        var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+                        hs.src = ('//s10.histats.com/js15_as.js');
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+                        })();</script>
+                        <noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4519046&101" alt="" border="0"></a></noscript> --}}
+                        <!-- Histats.com  END  -->
+                {{-- </div> --}}
             </div>
             <div class="row d-flex justify-content-between">
                 <div class="col-lg-12">
@@ -59,10 +75,10 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <ul class="list-inline" style="margin: 2px auto; display:flex; flex-wrap: wrap; justify-content:center">
                     <li class="list-inline-item" style="margin: 5px 15px">
-                        <a target="_blank" rel="noopener noreferrer" href="https://fmb9.go.id/" title="Forum Merdeka Barat 9"><img src="{{ URL('/frontend') }}/img/logo/FMB9.png" alt="" width="125px"></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/fmb9.id/" title="Forum Merdeka Barat 9"><img src="{{ URL('/frontend') }}/img/logo/FMB9.png" alt="" width="125px"></a>
                     </li>
                     <li class="list-inline-item" style="margin: 5px 15px">
-                        <a target="_blank" rel="noopener noreferrer" href="https://gprtv.id/categories/berita" title="GPR TV NEWS"><img src="{{ URL('/frontend') }}/img/logo/GPRNEWS.png" alt="" width="75px"></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/gprnews.id/" title="GPR TV NEWS"><img src="{{ URL('/frontend') }}/img/logo/GPRNEWS.png" alt="" width="75px"></a>
                     </li>
                     <li class="list-inline-item" style="margin: 5px 15px">
                         <img src="{{ URL('/frontend') }}/img/logo/JURNAL.jpg" alt="" width="75px">
