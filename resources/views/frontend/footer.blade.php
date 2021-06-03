@@ -29,7 +29,7 @@
             <div class="row d-flex justify-content-between">
                 <div class="col-lg-12">
                     <div class="footer-social">
-                        <a href="https://wa.me/62818180380"><i class="fab fa-whatsapp" style="font-size: 20px"></i></a>
+                        <a href="https://wa.me/62818180302"><i class="fab fa-whatsapp" style="font-size: 20px"></i></a>
                         <a href="mailto:gprtv@mail.kominfo.go.id"><i class="far fa-envelope" style="font-size: 20px"></i></a>
                         <div class="footer-copy-right f-right">
                             <p style="color: #afafaf">Hak Cipta &copy; <script>document.write(new Date().getFullYear());</script> GPR TV</p>

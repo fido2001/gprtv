@@ -17,7 +17,7 @@
                     <p align="justify">- C Band Satelit Telkom 4 Freq 3766 Mhz | Pol Horizontal | Symbol Rate 21818 ksps | PID Video 1661 | PID Audio 1662 | PID Program 1661.</p>
                     <p align="justify">- Ku Band Satelit Ses 9 Freq 11861 Mhz | Pol Horizontal | Symbol Rate 45000 | PID Video 643 | PID Audio 843 | PID Program 8191.</p>
                     <p align="justify">Dirilis pada 10 Desember 2018, GPRTV dimaksudkan untuk menyiarkan informasi pemerintah kepada masyarakat, terutama daerah 3T (Tertinggal, Terdepan, dan Terluar) yang menggunakan parabola / TV satelit.</p>
-                    <p align="justify">Informasi lebih lanjut dapat menghubungi 0818-180-380 (WA) dan email ke gprtv@mail.kominfo.go.id</p>
+                    <p align="justify">Informasi lebih lanjut dapat menghubungi 0818-180-302 (WA) dan email ke gprtv@mail.kominfo.go.id</p>
                     <p align="justify">Dit Pengelolaan Media</p>
                     <p align="justify"><u>Jl. Merdeka Barat 9 Jakarta 10110</u></p>
                 </div>
